@@ -1,13 +1,12 @@
 import React from 'react';
 import Loader from '../Loader';
 import Button from '../Button';
-// import Router from 'next/router';
+import { withRouter } from 'react-router-dom';
 import styles from './Table.module.scss';
 import { useDispatch, useSelector } from "react-redux";
 import {get, multipleActionExecutor} from './Table.action';
 import ReactHTMLTableToExcel from 'react-html-table-to-excel';
 import {MdCheckBox, MdCheckBoxOutlineBlank, MdSearch} from 'react-icons/md';
-
 
 const Table = props => {
     
@@ -31,6 +30,16 @@ const Table = props => {
             setIsLoading(!isLoading);
             setData(values);
         }
+
+        if (message !== null) {
+            // console.dir(message.split('-')[0]);
+            console.dir(message);
+
+            // if ((message.split('-')[0] === 'Users updated successfully') || (message.split('-')[0] === 'Users deleted successfully')) {
+            //     console.dir('Entries status updated successfully');
+            // }    
+        }
+
     }, [message]);
 
     const selected = row => {
@@ -50,7 +59,7 @@ const Table = props => {
      * @return
      */
     const redirectToShow = row => {
-        // Router.push(`${props.show_url.url}/[id]`, `${props.show_url.url}/${row[props.show_url.key]}`);
+        props.history.push(`${props.show_url.url}/${row[props.show_url.key]}`);
     }
 
     /** Display table */
@@ -149,15 +158,20 @@ const Table = props => {
         let option = props.filters.find(function (el) {
             return el.value.toString() === selected.toString();
         });
-        const {key, value} = option;
 
-        let newData = [];
-        for (var j=0; j < data.length; j++) {
-            if (data[j][key] === value) {
-                newData.push(data[j]);
+        try {
+            const {key, value} = option;
+
+            let newData = [];
+            for (var j=0; j < values.length; j++) {
+                if (values[j][key] === value) {
+                    newData.push(values[j]);
+                }
             }
+            setData(newData);
+        } catch (err) {
+            setData(values);
         }
-        setData(newData);
     }
 
     /** Return view */
@@ -166,7 +180,7 @@ const Table = props => {
             <div className={styles.table_actions}>
                 <div className={styles.search_action}>
                     <select onChange={e => handleSelect(e)} className={styles.select_input} >
-                        <option value="">Default</option>
+                        <option key={"default"} value={"default"}>{"Default"}</option>
                         {props.filters.map(filter => <option key={filter.value} value={filter.value}>{filter.label}</option>)}
                     </select>
                     <input value={searchvalue} onChange={(e) => setSearchValue(e.target.value)} className={styles.input} placeholder="Search" />
@@ -207,4 +221,4 @@ const Table = props => {
     )
 }
 
-export default Table;
+export default withRouter(Table);

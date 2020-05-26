@@ -1,7 +1,5 @@
 import React from 'react';
-// import Link from 'next/link';
 import {Link} from 'react-router-dom';
-// import { useRouter } from 'next/router';
 import styles from './User.module.scss';
 import Nav from '../../components/Navbar';
 import Lightbox from 'react-image-lightbox';
@@ -14,7 +12,6 @@ import AppLayout from '../../components/AppLayout';
 import { useDispatch, useSelector } from "react-redux";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import { userGet } from '../../shared/actions/User.action';
-
 import { AiOutlineUser, AiOutlineMail, AiOutlinePhone, AiOutlineDownload } from "react-icons/ai";
 
 const UserShow = props => {
@@ -26,9 +23,7 @@ const UserShow = props => {
     const {user, status, message} = useSelector(state => state.UserReducer);
 
     React.useEffect(() => {
-        if (user === null) {
-            // dispatch( userGet(router.query.id) );
-        }
+        dispatch( userGet(props.match.params.id) );
     }, []);
     
     let container = (
@@ -56,6 +51,17 @@ const UserShow = props => {
 
         container = (
             <React.Fragment>
+                {isOpen && (
+                    <Lightbox
+                        mainSrc={images[photoIndex]}
+                        onCloseRequest={() => setIsOpen(false)}
+                        nextSrc={images[(photoIndex + 1) % images.length]}
+                        prevSrc={images[(photoIndex + images.length - 1) % images.length]}
+                        onMovePrevRequest={() => setPhotoIndex((photoIndex + images.length - 1) % images.length)}
+                        onMoveNextRequest={() => setPhotoIndex((photoIndex + images.length - 1) % images.length)}
+                    />
+                )}
+
                 <div className={styles.user_grid}>
                     <div className={styles.user_profile}>
                         <h4 className={styles.user_fullname}>
@@ -110,16 +116,6 @@ const UserShow = props => {
                     </div>
                 </div>
                 <Nav centered />
-                {isOpen && (
-                    <Lightbox
-                        mainSrc={images[photoIndex]}
-                        onCloseRequest={() => setIsOpen(false)}
-                        nextSrc={images[(photoIndex + 1) % images.length]}
-                        prevSrc={images[(photoIndex + images.length - 1) % images.length]}
-                        onMovePrevRequest={() => setPhotoIndex((photoIndex + images.length - 1) % images.length)}
-                        onMoveNextRequest={() => setPhotoIndex((photoIndex + images.length - 1) % images.length)}
-                    />
-                )}
             </React.Fragment>
         )
     }
@@ -135,14 +131,5 @@ const UserShow = props => {
 		</AppLayout>
 	)
 }
-
-// UserShow.getInitialProps = async props => {
-//     const { query, store } = props.ctx;
-//     const id = query.id;
-
-//     store.dispatch( userGet(id) );
-    
-//     return {id};
-// }
 
 export default UserShow;

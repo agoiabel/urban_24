@@ -5,13 +5,19 @@ import styles from './AppLayout.module.scss';
 import AuthBg1 from '../../images/auth1.svg';
 import AuthBg2 from '../../images/auth2.svg';
 import logo from '../../images/urban24-logo.png';
-import { getStorage } from '../../shared/storage';
 import { FiLogOut, FiList } from 'react-icons/fi';
+import { getStorage, removeStorage } from '../../shared/storage';
 
 const AppLayout = props => {
 
-    const logout = () => {
-        console.dir('logout');
+    const logout = async () => {
+        try {
+            await removeStorage('URBAN24');
+            await removeStorage('URBAN24_TOKEN');
+            return props.history.push('/');
+        } catch (err) {
+            alert('error deleting storage')
+        }
     }
 
     return (
@@ -61,4 +67,4 @@ const AppLayout = props => {
     )
 }
 
-export default AppLayout;
+export default withRouter(AppLayout);

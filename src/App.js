@@ -1,7 +1,6 @@
 import React from "react";
-import './shared/styles/app.scss';
-
 import User from "./pages/User";
+import './shared/styles/app.scss';
 import Login from "./pages/Login";
 import Terms from "./pages/Terms";
 import Landing from "./pages/Landing";
@@ -9,10 +8,11 @@ import { Provider } from "react-redux";
 import Register from "./pages/Register";
 import store from './shared/root.store';
 import Dashboard from "./pages/Dashboard";
-
+import 'react-image-lightbox/style.css'; 
 import check_status from './shared/check_status';
 import Forgotpassword from "./pages/Forgotpassword";
 import AuthenticatedRoute from './shared/AuthenticatedRoute';
+import UnauthenticatedRoute from './shared/UnauthenticatedRoute';
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
 const App = props => {
@@ -32,7 +32,7 @@ const App = props => {
             console.dir(e);
         }
     }
-    
+
     return (
         <Provider store={store}>
             <BrowserRouter>
@@ -43,7 +43,7 @@ const App = props => {
                     <Route path="/register" exact component={Register} />
                     <Route path="/forgotpassword" exact component={Forgotpassword} />
 
-                    <AuthenticatedRoute path="/user:id" exact component={User} appProps={{ isAuthenticated }} />
+                    <AuthenticatedRoute path="/user/:id" exact component={User} appProps={{ isAuthenticated }} />
                     <AuthenticatedRoute path="/dashboard" exact component={Dashboard} appProps={{ isAuthenticated }} />
 
                     <Redirect to="/" />
