@@ -1,8 +1,9 @@
 import React from 'react';
 import Loader from '../Loader';
 import Button from '../Button';
-import { withRouter } from 'react-router-dom';
 import styles from './Table.module.scss';
+import { withRouter } from 'react-router-dom';
+import { useToasts } from 'react-toast-notifications';
 import { useDispatch, useSelector } from "react-redux";
 import {get, multipleActionExecutor} from './Table.action';
 import ReactHTMLTableToExcel from 'react-html-table-to-excel';
@@ -11,6 +12,7 @@ import {MdCheckBox, MdCheckBoxOutlineBlank, MdSearch} from 'react-icons/md';
 const Table = props => {
     
     const dispatch = useDispatch();
+    const { addToast } = useToasts();
     const [data, setData] = React.useState([]);
     const [isLoading, setIsLoading] = React.useState(false);
     const [searchvalue, setSearchValue] = React.useState('');
@@ -32,12 +34,10 @@ const Table = props => {
         }
 
         if (message !== null) {
-            // console.dir(message.split('-')[0]);
-            console.dir(message);
-
-            // if ((message.split('-')[0] === 'Users updated successfully') || (message.split('-')[0] === 'Users deleted successfully')) {
-            //     console.dir('Entries status updated successfully');
-            // }    
+            addToast(message, {
+                appearance: 'success',
+                autoDismiss: true,
+            });
         }
 
     }, [message]);
