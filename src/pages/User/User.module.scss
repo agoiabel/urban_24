@@ -1,0 +1,152 @@
+@import '../../shared/styles/mixins';
+
+.user {
+    @include flex(flex, column, null, space-between, null);
+}
+
+.user_box {
+    flex: 1;
+    @include flex(flex, column, null, center, center);
+    
+    .error {
+        padding: 4rem 2rem;
+        width: 95%;
+        max-width: 450px;
+        text-align: center;
+        
+        h4 {
+            font-family: var(--font-family-primary);
+            font-style: normal;
+            font-weight: normal;
+            font-size: 25px;
+            line-height: 29px;
+            margin-top: 1.5rem;        
+        }
+    }
+}
+.box-shadow {
+    background: #FFFFFF;
+    box-shadow: -2px 0px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 7px;
+}
+
+.navigate {
+    cursor: pointer;
+}
+
+.user_grid {
+    flex: 1;
+    margin: 1rem 0 3rem;
+    display: grid;
+    grid-auto-flow: dense;
+    grid-auto-rows: 50px;
+    gap: 1.5rem;
+    grid-template-columns: repeat(5, minmax(50px, 1fr));
+    grid-template-rows: repeat(4, minmax(50px, 1fr));
+    
+    .user_profile {
+        @extend .box-shadow;
+        grid-column: span 2;
+        grid-row: span 4;
+        padding: 0 0.5rem;
+        
+        .user_fullname {
+            font-family: 'Roboto', sans-serif;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 45px;
+            line-height: 99.69%;
+            text-align: center;
+            border-bottom: 1px solid #ccc;
+            text-transform: capitalize;
+            padding: 2rem 0;
+        }
+        
+        .user_info_group {
+            padding: 0.5rem 1rem;
+
+            .user_info {
+                display: flex;
+                align-items: center;
+                margin: 2.5rem 0;
+            }
+            
+            p {
+                flex: 1;
+                font-family: 'Roboto', sans-serif;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 18px;
+                line-height: 21px;
+                margin-left: 10px;
+            }
+        }
+    }
+
+    .user_photos {
+        @extend .box-shadow;
+        grid-column: span 3;
+        grid-row: span 4;
+        padding: 2rem 1.5rem;
+
+        h4 {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: normal;
+            font-size: 29px;
+            line-height: 34px;
+            color: #DADADA;
+            margin-bottom: 1.5rem;
+        }
+    }
+    
+    .user_photos_thumbnails {
+        @include flex(flex, null, wrap, space-between, null);
+        flex: 1;
+        padding: 0.75rem 0;
+
+        .thumbnail {
+            @include flex(flex, null, null, center, center);
+            position: relative;
+            margin-bottom: 15px;
+            width: 32%;
+            height: 200px;
+            max-width: 200px;
+            transition: transform 0.3s ease-in-out;
+
+            &:hover {
+                transform: scale(1.025);
+            }
+        
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        
+            .download_icon {
+                @include flex(flex, null, null, center, center);
+                position: absolute;
+                bottom: 0.25rem;
+                right: 0.25rem;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                background: #0F0F0F;
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);                
+                cursor: pointer;
+            }
+        }
+    }
+    
+    
+    .user_add_button {
+        grid-column: 1 / span 2;
+        grid-row: span 1;
+    }
+
+    .user_download_button {
+        grid-column: 3 / span 3;
+        grid-row: span 1;
+    }
+}

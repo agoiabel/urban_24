@@ -1,0 +1,146 @@
+@import '../../shared/styles/mixins';
+
+.table {
+    width: 100%;
+    display: table;
+    color: #4a4a4d;
+    border-spacing: 0;
+    overflow: scroll;
+    border-collapse: collapse;
+    background-color: #FFFFFF;
+}
+
+
+
+.tr {
+    overflow-x: scroll;
+    cursor: pointer !important;
+    margin-bottom: 15px !important;
+}
+
+
+.th,
+.td {
+    padding: 15px 15px;
+    vertical-align: middle;
+    overflow: scroll !important;
+    background-color: #FFFFFF;
+    text-align: center;
+}
+.thead {
+    font-size: 14px;
+    line-height: 24px;
+    max-width: 100%;
+    font-weight: 900;
+    line-height: 24px;
+    font-family: "Roboto";
+    mix-blend-mode: normal;
+
+    color: rgba(51, 51, 51, .5);
+}
+.thead .tr .th {
+    // text-align: left;
+    padding: 15px 15px;
+    border: 1px solid transparent;
+}
+
+.tbody {
+    // max-width: 100%;
+    // background-color: #FFFFFF;
+}
+.td {
+    // padding: 15px 15px;
+    // background: #FFFFFF;
+}  
+.m_action {
+    margin-left: 5px;
+}
+
+.input {
+    padding: 5px;
+    padding-left: 1rem;
+    flex: 1;
+    margin-left: 0.5rem;
+    border-left: 1px solid #969696;
+}
+
+.table_actions {
+    @include flex(flex, column, wrap, space-between, center);
+    margin-bottom: 1rem;
+
+    @include screen('desktop') {
+        flex-direction: row;
+    }
+}
+
+.search_action {
+    @include flex(flex, null, null, null, center);
+    background: #fff;
+    height: 50px;
+    padding-left: 1rem;
+    width: 100%;
+
+    @include screen('desktop') {
+        width: 30%;
+        flex: 1;
+    }
+
+}
+.select_input {
+    height: 30px;
+    width: 7.5rem;
+    border: none !important;
+    outline: none;
+}
+.search_icon {
+    @include flex(flex, null, null, center, center);
+    background: #0F0F0F;
+    box-sizing: border-box;
+    height: 100%;
+    width: 4rem;
+}
+.button_actions {
+    @include flex(flex, null, null, space-evenly, center);
+    position: relative;
+    width: 100%;
+    margin-top: 0.75rem;
+
+    @include screen('desktop') {
+        justify-content: flex-end;
+        flex: 1;
+        margin-top: 0;
+    }
+}
+
+.export_button {
+    position: relative;
+    
+    .download_xls {
+        font-size: 16px;
+        cursor: pointer;
+        outline: none;
+    }
+}
+@media screen and (max-width: 768px) {
+    // .tr {
+    //     display: flex;
+    //     flex-wrap: wrap;
+    //     flex-direction: row;
+    //     margin: 0.5em 0;
+    // }
+    // .td, .th {
+    //     flex: 1 1 150px;
+    //     border-radius: 8px;
+    //     margin-bottom: 10px;
+    //     background: #FFFFFF;
+    // }
+    // .thead {
+    //     max-width: 100%;
+    //     font-size: 11px;
+    //     color: #333333;
+    //     font-weight: 900;
+    //     line-height: 24px;
+    //     background: #fff;
+    //     mix-blend-mode: normal;
+    // }
+}

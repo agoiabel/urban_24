@@ -1,0 +1,101 @@
+//https://www.madebymike.com.au/writing/using-css-variables
+:root {
+	--text-size-big				: 18px;
+	--text-size-1				: 14px;
+	--text-size-2				: 10px;
+	--text-size-3				: 8px;
+
+	--head-size-1				: 35px;
+	--head-size-2				: 19px;
+	--head-size-3				: 18px;
+	--head-size-4				: 17px;
+
+    --body-line-height			: 1.4;
+    --heading-line-height		: 1.2;
+
+	--font-family-secondary		: "Rubik", sans-serif;
+	--font-family-primary		: 'Roboto', sans-serif;
+
+	@include screen('tablet') {
+		--head-size-1			: 60px;
+		--head-size-2			: 30px;
+		--head-size-3			: 21px;
+		--head-size-4			: 18px;
+	}
+
+	@include screen('desktop') {
+		--head-size-1			: 70px;
+		--head-size-2			: 30px;
+		--head-size-3			: 27px;
+		--head-size-4			: 24px;
+	}
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+  }
+  
+
+body {
+	font-family					: var(--font-family-primary);
+    font-size					: var(--text-size-1);
+	color						: var(--color-text);	
+	background-color  			: #F7F7F7;
+}
+h1, h2, h3, h4, form legend {
+    margin-bottom				: var(--space-xxs);
+    color						: var(--color-text-heading);
+	line-height					: var(--heading-line-height);
+	font-family					: var(--font-family-secondary);
+}
+
+/* text size */
+.text--xxxl {
+    font-size					: var(--text-xxxl);
+}
+
+h1, .text--xxl {
+    font-size					: var(--head-size-1);
+}
+
+h2, .text--xl {
+    font-size					: var(--head-size-2);
+}
+
+h3, .text--lg {
+    font-size					: var(--head-size-3);
+}
+
+
+h4, .text--md {
+    font-size					: var(--text-size-1);
+}
+.text--sm, small {
+    font-size					: var(--text-size-2);
+}
+.text--xs {
+    font-size					: var(--text-size-2);
+}
+
+
+p {
+	line-height					: var(--body-line-height);;
+}
+b, strong {
+    font-weight					: bold;
+}
+
+.text-center {
+	text-align					: center;
+}
+
+.dropzone {	
+	h4 {
+		font-size: 15px;
+		line-height: 18px;
+		color: #646464;
+	}
+}

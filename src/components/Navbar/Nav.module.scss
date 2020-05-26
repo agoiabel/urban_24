@@ -1,0 +1,31 @@
+@import '../../shared/styles/mixins';
+
+.navbar {
+    @include flex(flex, null, null, space-between, null);
+}
+
+.navbar_logo {
+    max-width: 7.5rem;
+
+    img {
+        width: 100%;
+    }
+}
+
+.navbar_links {
+    flex: 1;
+    justify-content: flex-end;
+    display: none;
+    
+    .link + .link {
+        margin-left: 2.5rem;
+    }
+
+    @include screen('tablet') {
+        display: flex;
+    }
+}
+
+.centered {
+    justify-content: center;
+}

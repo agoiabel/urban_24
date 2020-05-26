@@ -1,0 +1,11 @@
+@import '../../shared/styles/mixins';
+
+.form_error_message {
+    font-weight: 500;
+    line-height: 36px;
+    font-size: var(--text-size-2);
+    color: var(--color-tertiary-1);
+}
+.formControl {
+    width: 100%;
+}

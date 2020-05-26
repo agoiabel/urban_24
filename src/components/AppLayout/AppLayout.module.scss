@@ -1,0 +1,139 @@
+@import '../../shared/styles/mixins';
+
+// .auth_screen_bg1 {
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     width: 100%;
+//     height: 100%;
+
+//     // position: absolute;
+//     // bottom: 0;
+//     // left: 0;    
+// }
+
+// .auth_screen_bg2 {
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     width: 100%;
+//     height: 100%;
+
+//     // position: absolute;
+//     // bottom: 0;
+//     // left: 0;
+// }
+
+
+.app_screen {
+    height: 100vh;
+    max-width: 100vw;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.app_screen_sidebar {
+    width: 18rem;
+    overflow: hidden;
+    position: relative;
+    background-color: darken(#252525, 10%);
+    display: none;
+
+    @include screen('tablet') {
+        display: block;
+    }
+}
+
+.sidebar_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 0;
+}
+
+.sidebar_content_logo {
+    max-width: 7.5rem;    
+
+    img {
+       width: 100%;
+       height: 100%;
+   }
+}
+
+.sidebar_content_routes {
+    // @include flex(flex, column, null, null, null);
+    margin: 250px 0;
+    width: 100%;
+    flex: 1;
+    padding: 0.5rem 0;
+    
+    .route {
+        @extend .sidebar_content_logout;
+        text-decoration: none;
+        font-size: var(--text-size-big);
+        background-color: darken(#6F6F6F, 25%);
+    }
+}
+
+.sidebar_content_logout {
+    @include flex(flex, null, null, center, center);
+    padding: 0.5rem;
+    width: 100%;
+    transition: background-color 0.3s linear;
+    cursor: pointer;
+
+    &:hover {
+        background-color: darken(#6F6F6F, 25%);
+    }
+
+    p {
+        color: #fff;
+    }
+}
+
+// .app_screen_bg1 {
+//     transform: rotate(180deg);    
+// }
+
+.app_screen_bg2 {
+    position: absolute;
+    bottom: -5rem;
+    left: 0;
+}
+
+.app_screen_bg3 {
+    position: absolute;
+    bottom: -20rem;
+    left: 0;
+
+    height: 800px;
+}
+
+.app_screen_bg4 {
+    position: absolute;
+    bottom: -20rem;
+    left: 0;
+    height: 750px;
+}
+
+.app_screen_content {
+    min-height: 100vh;
+    overflow-y: scroll;
+    width: 100%;
+    overflow-x: hidden;
+    padding: 3rem;
+    margin: 0 auto;
+
+    @include screen('tablet') {
+        width: calc(100% - 18rem);
+    }
+
+}

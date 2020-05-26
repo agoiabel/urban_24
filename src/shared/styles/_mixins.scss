@@ -1,0 +1,134 @@
+//Import if Google Fonts URL is defined
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+//================================================================
+// Media queries # https://w3bits.com/sass-mixins/
+//================================================================
+@mixin screen($size) {
+    $tablet: "(min-width: 600px)";
+    $desktop: "(min-width: 1000px)";
+
+    @if $size == desktop {
+        @media only screen and #{$desktop} {
+            @content;
+        }
+    }
+    @else if $size == tablet {
+        @media only screen and #{$tablet} {
+            @content;
+        }
+    }
+    @else {
+        @media only screen and #{$size} {
+            @content;
+        }
+    }
+}
+
+
+//======================================================================
+// Opacity
+//======================================================================
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity = $opacity-ie); //IE8
+}
+
+
+//=======================================================================
+// Center usage == @include center(90%);
+//=======================================================================
+@mixin center($width : 100%) {
+    width: $width;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+//=======================================================================
+// Round Shape
+//=======================================================================
+@mixin round($dim) {
+    width: $dim;
+    height: $dim;
+    border-radius: $dim / 2;
+}
+
+
+//=======================================================================
+// EM generator
+//=======================================================================
+@mixin em($font-size) {
+    font-size: $font-size;
+    line-height: $font-size * 1.618;
+}
+
+
+//===============================================================================
+// Flex Helper
+//===============================================================================
+@mixin flex ($display: flex, $direction: null, $wrap: null, $justify: null, $align: null) {
+    display: $display;
+    flex-direction: $direction;
+
+    flex-wrap: $wrap;    
+    justify-content: $justify;
+    align-items: $align;
+}
+
+
+//=======================================================================
+// BEM - Element
+//=======================================================================
+@mixin element($element) {
+    &__#{$element} {
+        @content;
+    }
+}
+
+
+//=======================================================================
+// BEM - Modifier
+//=======================================================================
+@mixin modifier($modifier) {
+    &--#{$modifier} {
+        @content;
+    }
+}
+
+
+//=======================================================================
+// Button
+//=======================================================================
+@mixin button($bg, $color, $outline:false) {
+    background: $bg;
+    color: $color;
+    height: 45px;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 45px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 200ms ease-in-out;
+    @if($outline) {
+        background: none;
+        border: 1px solid $bg;
+        color: $bg;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
+        &:hover {
+            border-color: var(--color-tertiary-1);
+        }
+    }
+    &:hover {
+        transform: translateY(-3px);
+        background: var(--color-tertiary-1);
+        color: white;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    }
+}
+
+
+@mixin fontSmooth {
+    -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}

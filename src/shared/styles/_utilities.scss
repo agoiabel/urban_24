@@ -1,0 +1,39 @@
+.error_container {
+    padding: 15px;
+    border-radius: 5px;
+    background: #f2dede;
+  }
+  .error {
+    color: #a94442;
+  }
+  .card {
+      background: white;
+      border: 1px solid #dee5e7;
+      padding: 3rem;
+      border-radius: 1rem;
+  }
+
+.reactSelect {
+  input {
+    padding: 10px !important;
+  }
+  margin-bottom: 55px !important;
+}
+.reactSelectLabel {
+  display: block;
+  font-size: 16px !important;
+  margin-bottom: 15px !important;
+
+  color: var(--gray-1) !important;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-spaced {
+  @extend .flex-center;
+  justify-content: space-between;
+}

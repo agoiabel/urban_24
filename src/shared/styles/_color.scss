@@ -1,0 +1,62 @@
+:root {
+    --white                 : #FFFFFF;
+
+    --gray-1                : #254335;
+    --gray-2                : #0f242e;
+
+    --gray-3                : lighten(#868a99, 10%);
+    --gray-4                : lighten(#868a99, 30%);
+    --gray-5                : rgba(37, 67, 53, 0.8);
+    --gray-6                : #6F6F6F;
+
+    --color-primary-1       : #97c530;
+    --color-primary-2       : #30c57b;
+    --color-primary-3       : #24b46c;
+    --color-primary-4       : #229C62;
+
+    --color-tertiary-1      : #ec5252;
+    --color-secondary-1     : #28acdd;
+
+    --color-error           : #ec5252;
+
+    /* typography */
+    --color-text            : var(--gray-1);
+    --color-text-heading    : var(--gray-2);
+    --color-text-subtle     : var(--gray-2);
+    --color-link            : var(--color-primary-2);
+    --color-link-visited    : var(--color-secondary-1);
+}
+
+body {
+    color: var(--gray-1);
+}
+
+h1, h2, h3, h4, form legend {
+    color: var(--color-text-heading);
+}
+
+a {
+    color: var(--color-link);
+
+    &:visited {
+        color: var(--color-link-visited);
+    }
+}
+
+.color-gray {
+    color: var(--gray-6) !important;
+}
+
+.link-text {
+    color: lighten(#0F0F0F, 40%) !important;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 23px;
+}
+
+.color-white {
+    color: #FFFFFF !important;
+}

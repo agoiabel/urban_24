@@ -1,0 +1,103 @@
+$primary               :   #0F0F0F;
+$warning               :   #FBBC04;
+$danger                :   #ec5252;
+
+.btn {
+    border: none;  
+    cursor: pointer;
+    margin-bottom: 15px;
+
+    font-family         : "Roboto", sans-serif;
+    font-weight         : 400;
+    border-radius       : 0;
+    transition          : all 0.3s ease;
+
+    &:hover {
+        transform       : translateY(-3px);
+    }
+
+    &:disabled,
+    &[disabled] {
+      background: rgba(37, 67, 53, 0.15);
+    }
+}
+
+
+%btn__solid {
+    border: none;
+    color:#FFFFFF;
+    font-size: 16px;
+    line-height: 36px;
+    padding: 5px 10px;
+    border-radius: 0;
+
+    opacity: 1;
+    transition: all 0.3s ease 0s;
+}
+
+
+.btn__primary__solid {
+    @extend %btn__solid;
+    background: $primary;
+}
+.btn__warning__solid {
+    @extend %btn__solid;
+    background: $warning;
+}
+.btn__danger__solid {
+    @extend %btn__solid;
+    background: $danger;
+}
+
+.btn__transparent__light {
+    @extend %btn__solid;
+    color: #FFFFFF;
+    background: transparent;
+    border: 1px solid #ffffff;
+}
+
+.btn__transparent__dark {
+    @extend %btn__solid;
+    color: $primary;
+    background: transparent;
+    border: 1px solid $primary;
+}
+
+.btn__primary__outline {
+    @extend %btn__solid;
+    color: $primary;
+    background: #FFF;
+    border: 1px solid $primary;
+
+    &:disabled,
+    &[disabled] {
+        color: #FFF;
+        border-color: transparent;
+        background: rgba(37, 67, 53, 0.15);
+    }
+}
+.btn__warning__outline {
+    @extend %btn__solid;
+    color: $warning;
+    background: #FFF;
+    border: 1px solid $warning;
+}
+.btn__danger__outline {
+    @extend %btn__solid;
+    color: $danger;
+    background: #FFF;
+    border: 1px solid $danger;
+}
+
+
+%btn_size {
+    font-weight: 900;
+    letter-spacing: 0.02em;
+}
+.btn__small {
+    @extend %btn_size;
+}
+.btn__large {
+    width: 100%;
+    @extend %btn_size;
+}

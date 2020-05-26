@@ -1,0 +1,20 @@
+@import '../../shared/styles/mixins';
+
+.form_error_message {
+    font-weight: 500;
+    line-height: 36px;
+    font-size: var(--text-size-2);
+    color: var(--color-tertiary-1);
+}
+
+.hfh_form_group {
+    position: relative;
+    margin-bottom: 2.5rem;
+}
+
+.hfh_form_icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0.25rem;
+}
