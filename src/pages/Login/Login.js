@@ -32,7 +32,10 @@ const Login = props => {
             return alert(message);
 		}
 		if (status === 200) {
-            // Router.push('/dashboard');
+            if (props.location.search.length) {
+                return props.history.push(props.location.search.split("=")[1]);
+            }
+            return props.history.push('/dashboard');
         }
     }, [status, message]);
     
@@ -63,6 +66,5 @@ const Login = props => {
         </AuthLayout>
     )
 }
-
 
 export default Login;

@@ -1,25 +1,24 @@
 import React from 'react';
-// import Head from 'next/head';
-// import Link from 'next/link';
 import { Link } from  'react-router-dom';
+import { withRouter } from 'react-router';
 import styles from './AppLayout.module.scss';
-// import { logout } from '../../shared/auth_guard';
 import AuthBg1 from '../../images/auth1.svg';
 import AuthBg2 from '../../images/auth2.svg';
 import logo from '../../images/urban24-logo.png';
+import { getStorage } from '../../shared/storage';
 import { FiLogOut, FiList } from 'react-icons/fi';
 
-const AppLayout = ({title, children, pageStyle}) => {
+const AppLayout = props => {
 
     const logout = () => {
-
+        console.dir('logout');
     }
 
     return (
         <div>
             <div>
                 <meta charSet="utf-8" />
-                <title>Urban24 - {title}</title>
+                <title>Urban24 - {props.title}</title>
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 <link rel="shortcut icon" type="image/png" href="./images/favicon.ico" />
                 <meta property="og:title"         content="Urban 24 contest" />
@@ -54,8 +53,8 @@ const AppLayout = ({title, children, pageStyle}) => {
                         </div>
                     </div>
                 </div>
-                <div className={`${styles.app_screen_content} ${pageStyle}`}>
-                    {children}
+                <div className={`${styles.app_screen_content} ${props.pageStyle}`}>
+                    {props.children}
                 </div>
             </div>
         </div>

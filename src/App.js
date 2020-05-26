@@ -9,11 +9,30 @@ import { Provider } from "react-redux";
 import Register from "./pages/Register";
 import store from './shared/root.store';
 import Dashboard from "./pages/Dashboard";
-import AuthGuard from "./shared/auth_guard";
+
+import check_status from './shared/check_status';
 import Forgotpassword from "./pages/Forgotpassword";
+import AuthenticatedRoute from './shared/AuthenticatedRoute';
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
 const App = props => {
+    const [isAuthenticated, setIsAuthenticated] = React.useState(false);
+
+    React.useEffect(() => {
+        onLoad();
+    }, []);
+    
+    async function onLoad() {
+        try {
+            const token = await check_status();
+            const status = token !== null ? true : false;
+            
+            setIsAuthenticated(status);
+        } catch (e) {
+            console.dir(e);
+        }
+    }
+    
     return (
         <Provider store={store}>
             <BrowserRouter>
@@ -22,9 +41,10 @@ const App = props => {
                     <Route path="/login" exact component={Login} />
                     <Route path="/terms" exact component={Terms} />
                     <Route path="/register" exact component={Register} />
-                    <Route path="/user:id" exact component={AuthGuard(User)} />
                     <Route path="/forgotpassword" exact component={Forgotpassword} />
-                    <Route path="/dashboard" exact component={AuthGuard(Dashboard)} />
+
+                    <AuthenticatedRoute path="/user:id" exact component={User} appProps={{ isAuthenticated }} />
+                    <AuthenticatedRoute path="/dashboard" exact component={Dashboard} appProps={{ isAuthenticated }} />
 
                     <Redirect to="/" />
                 </Switch>
