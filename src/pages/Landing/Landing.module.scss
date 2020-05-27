@@ -1,98 +1,45 @@
 @import '../../shared/styles/mixins';
 
-.landing {
-    height: 100vh;
-    max-width: 100vw;
-    overflow: hidden;
-    position: relative;
-    padding: 0;
-    margin: 0;
-    background: darken(#252525, 7.5%);
+.container {
+    color: #FFFFFF;
+    padding: 20px 0;
+    background-color: #171717;   
 }
-
-.landing_bg1,
-.landing_bg2 {
-    position: absolute;
-    top: 81%;
-    left: 0;
+.wrapper {
+    width: 90%;
+    margin: 0 auto;
 }
-
-.landing_content {
-    @include flex(flex, column, null, null, null);
-    height: 100vh;
-    overflow: scroll;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+.logo {
+    height: 4rem;
+    max-width: 6rem;    
+}
+.logo img {
     width: 100%;
-    padding: 2rem 0 0;
 }
-
-.landing_content_carousel {
-    @include flex(flex, column, null, null, center);
-    flex: 1;
-    margin-top: 2rem;
-    color: #ffffff;
-    padding: 3rem 0 2rem;
-
-    .hero {
+.banner_image {
+    img {
         width: 100%;
-        position: absolute;
-        top: 7rem;
-        left: 0;
-
-        img {
-            width: 100%;
-            max-width: 850px;
-            height: auto;
-            object-fit: cover;
-        }
-    }
-
-    h4 {
-        font-family: 'Roboto', sans-serif;
-        margin: 2rem 0 5rem;
-        color: #ffffff;
-        font-weight: 200 !important;
-        font-size: 133px;
-        line-height: 156px;
-        text-align: center;
-    }
-
-    .content_text {
-        align-self: flex-end;
-        width: 40%;
-        color: #ffffff;
-        margin-top: auto;
-        padding: 0;
-        padding-right: 6rem;
-
-        p {
-            font-family: 'Roboto', sans-serif;
-            font-weight: 300;
-            font-size: 18px;
-            line-height: 1.7;
-            margin-bottom: 2rem;
-        }
-    }
-    
-    .arrow {
-        position: absolute;
-        left: 7.5rem;
-        bottom: -7.5rem;
-        cursor: pointer;
-        transition: 0.3s transform linear;
-
-        img {
-            width: 100%;
-            max-width: 75px;
-        }
-        
-        &:hover {
-            transform: scale(1.1);
-        }
+        max-width: 100%;
     }
 }
+.banner_one_content {
+    margin-top: -200px;
+}
+.banner_content_header {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 70px;
+    line-height: 82px;    
+    color: #FFFFFF;
+}
+.banner_content_description {
+    width: 92%;
+    margin: 30px auto;
 
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 158.69%;
+}
