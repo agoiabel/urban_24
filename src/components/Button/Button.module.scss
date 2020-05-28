@@ -65,9 +65,19 @@ $danger                :   #ec5252;
 
 .btn__primary__outline {
     @extend %btn__solid;
-    color: $primary;
-    background: #FFF;
-    border: 1px solid $primary;
+    color: #FFF;
+    background: transparent;
+    border: 1px solid #FFF;
+
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 36px;    
+    letter-spacing: 0.02em;
+    
+    color: #FFFFFF;
+    
 
     &:disabled,
     &[disabled] {
