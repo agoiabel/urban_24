@@ -1,0 +1,113 @@
+@import '../../shared//styles/mixins';
+
+.back {
+    position: absolute;
+    bottom: 78px;
+    left: 100px;
+
+    @include screen("(min-width: 1400px)") {
+    }
+}
+.item_number {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #FFF;
+    flex-shrink: 0;
+    margin-right: 20px;
+}
+.banner_web_header {
+    position: absolute;
+    top: 190px;
+    left: 400px;
+}
+.banner_title {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 200;
+    font-size: 100px;
+    line-height: 156px;
+
+    @include screen("(min-width: 1400px)") {
+        font-size: 133px;
+    }
+}
+
+.banner_three_item_two {
+    position: relative;
+    left: 105%;
+    bottom: 150px;
+
+    @include screen("(min-width: 1400px)") {
+        left: 130%;
+    }
+}
+.banner_three_item_three {
+    position: relative;
+    left: 35%;
+    top: -175px;
+}
+.banner_web_three_description {
+    width: 400px;
+    margin: 20px 0;
+
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 158.69%;        
+    color: #FFFFFF;
+}
+
+.banner_web_image {
+    margin-top: -80px;
+}
+.items {
+    position: absolute;
+    top: 40%;
+    left: 35%;   
+
+    @include screen("(min-width: 1400px)") {
+        left: 30%;   
+    }
+}
+.hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 0.25px solid #FFF;
+    padding: 0;
+    width: 100%;
+
+    margin-right: 20px;
+}
+.item {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 50px;
+
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 200;
+    font-size: 30px;
+    line-height: 35px;        
+    color: #FFFFFF;
+}
+.item {
+    width: 100%;
+    .hr {
+        width: 300px;
+    }
+    margin: 0;
+}
+
+.web_three_button {
+    position: relative;
+    left: 40%;
+    bottom: 120px;   
+}

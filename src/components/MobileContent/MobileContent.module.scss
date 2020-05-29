@@ -1,0 +1,155 @@
+@import '../../shared/styles/mixins';
+
+.banner_image {
+    img {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+.wrapper {
+    width: 90%;
+    margin: 0 auto;
+
+    @include screen('tablet') {
+        width: 90%;
+    }
+}
+.banner_one_content {
+    margin-top: -200px;
+}
+
+.banner_content_header,
+.banner_two_content_header {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 70px;
+    line-height: 82px;    
+    color: #FFFFFF;
+}
+.banner_content_header {
+    margin-bottom: 25px;
+}
+
+.banner_content_description {
+    width: 92%;
+    margin: 30px auto;
+
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 158.69%;
+}
+
+
+.banner_two_content {
+    .banner_content_header {
+        line-height: 64px;        
+    }
+}
+.banner_two_content_header {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+}
+
+.banner_two_content_description {
+    position: relative;
+}
+.banner_two_content_image {
+    img {
+        width: 40%;
+    }
+}
+
+
+.items {
+    top: 40%;
+    left: 20%;
+    position: absolute;
+}
+.item {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 50px;
+
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 200;
+    font-size: 30px;
+    line-height: 35px;        
+    color: #FFFFFF;
+}
+.item_number {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #FFF;
+    flex-shrink: 0;
+    margin-right: 20px;
+}
+.item_description {
+    font-family: "Roboto";
+    line-height: 158.69%;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    color: #FFFFFF;
+
+    max-width: 200px;
+}
+
+.item_two {
+    position: relative;
+    left: 15%;
+}
+.item_three {
+    position: relative;
+    left: 30%;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin: 50px auto 15px auto;
+}
+a.link {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 0.25px solid #FFF;
+    padding: 0;
+    width: 100%;
+
+    margin-right: 20px;
+}
+
+.banner_three_item__alternate {
+    .item_number {
+        order: 1;
+    }
+    .hr {
+        order: 0;
+    }
+}

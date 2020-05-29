@@ -1,0 +1,50 @@
+@import '../../shared/styles/mixins';
+
+.wrapper {
+    width: 90%;
+    margin: 0 auto;
+
+    @include screen('tablet') {
+        width: 90%;
+    }
+}
+.logo_navs {
+    @include screen('tablet') {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }    
+}
+.navs {
+    display: none;
+
+    @include screen('tablet') {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .nav {
+        margin-left: 45px;
+    }
+}
+.logo {
+    height: 4rem;
+    max-width: 6rem;
+    @include screen('tablet') {
+    }
+}
+.logo img {
+    width: 100%;
+}
+a.link {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+
+    text-decoration: none;
+    cursor: pointer;
+}

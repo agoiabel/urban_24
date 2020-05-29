@@ -1,0 +1,65 @@
+@import '../../shared//styles/mixins';
+
+.banner_web_one {
+    display: flex;
+    flex-direction: row;
+
+    .banner_content_description {
+        width: 70%;
+        margin-left: 15px;
+
+        @include screen("(min-width: 1200px)") {
+            width: 60%;
+            margin-top: 500px;
+            margin-left: 100px;    
+        }
+
+        @include screen("(min-width: 1300px)") {
+            width: 40%;
+            margin-top: 500px;
+            margin-left: 100px;    
+        }
+    }
+}
+.banner_web_image {
+    // width: 48%;
+    img {
+        height: 100%;
+        margin-top: 50px;
+        object-fit: contain;
+
+        position: relative;
+        z-index: 2;
+    }
+}
+.banner_web_header {
+    position: absolute;
+    top: 190px;
+    left: 400px;
+}
+.banner_title {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 200;
+    font-size: 100px;
+    line-height: 156px;
+
+    @include screen("(min-width: 1200px)") {
+        font-size: 120px;
+    }
+
+    @include screen("(min-width: 1300px)") {
+        font-size: 133px;
+    }
+}
+.banner_sub_title {
+    position: relative;
+    left: 250px;
+}
+.web_button {
+    width: 80%;
+    margin: 50px auto;
+
+    position: relative;
+    left: 1.5%;
+}
