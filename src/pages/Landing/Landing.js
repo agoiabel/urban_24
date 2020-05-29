@@ -1,66 +1,81 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import Nav from '../../components/Navbar';
+
+import Register from '../Register';
+
 import styles from './Landing.module.scss';
-import arrow from '../../images/arrow.svg';
 import Header from '../../components/Header';
-import AuthBg1 from '../../images/auth1.svg';
 import Button from '../../components/Button';
-import AuthBg2 from '../../images/auth2.svg';
-import landingImg1 from '../../images/tk1.png';
-import landingImg2 from '../../images/tk2.png';
-import logo from '../../images/urban24-logo.png';
+
 import useWindowDimensions from '../../shared/dimension';
 import MobileContent from '../../components/MobileContent';
-import LayoutDefault from '../../components/LayoutDefault';
+
 import WebOneContent from '../../components/WebOneContent';
 import WebTwoContent from '../../components/WebTwoContent';
 import WebThreeContent from '../../components/WebThreeContent';
+
+const TAB_CONTENT = {
+    'Register': Register,
+    'WebOneContent': WebOneContent,
+    'WebTwoContent': WebTwoContent,
+    'WebThreeContent': WebThreeContent,
+};
 
 const Landing = () => {
 
     const [step, setStep] = React.useState(0);
     const { height, width } = useWindowDimensions();
+    const [ pages, setPages ] = React.useState([
+        {
+            id: 1,
+            is_active: true,
+            component: 'WebOneContent',
+        },
+        {
+            id: 2,
+            is_active: false,
+            component: 'WebTwoContent',
+        },
+        {
+            id: 3,
+            is_active: false,
+            component: 'WebThreeContent',
+        },
+        {
+            id: 4,
+            is_active: false,
+            component: 'Register',
+        },
+    ]);
 
-    const popUp = () => {
-        console.dir('popUp');
+    const next = pageId => {
+        let newPages = [...pages].map(page => {
+            page['is_active'] = false;
+
+            if (page.id === pageId) {
+                page['is_active'] = true;
+            }
+
+            return page;
+        });
+        setPages(newPages);
     }
-    
+
     let container = (
         <MobileContent />
     )
 
-    let content = (
-        <React.Fragment>
-
-            {/* <WebOneContent /> */}
-
-            {/* <WebTwoContent /> */}
-
-            <WebThreeContent />
-            
-        </React.Fragment>
-    )
-
     if (width > 1200) {
-        container = (
-            <React.Fragment>
-                <Header />
+        const Component = TAB_CONTENT[pages.find(page => page.is_active).component];
 
-                { content }
-            </React.Fragment>
+        container = (
+            <Component next={next} />
         )
     }
 
-
     return (
-        <LayoutDefault>
-
-            <div className={styles.container}>
-                { container }
-            </div>
-
-        </LayoutDefault>
+        <React.Fragment>
+            { container }
+        </React.Fragment>
     )
 }
 

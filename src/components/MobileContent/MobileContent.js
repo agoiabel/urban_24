@@ -11,7 +11,7 @@ const MobileContent = props => {
     }
 
     return (
-        <React.Fragment>
+        <div className={styles.container}>
             <Header />
 
             <div className={styles.banner_image}>
@@ -116,7 +116,7 @@ const MobileContent = props => {
                     <Link to={'/'} className={styles.link}>OPPO.com</Link>
                 </div>
             </div>
-        </React.Fragment>
+        </div>
     )
 }
 

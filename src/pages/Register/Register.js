@@ -13,7 +13,7 @@ import LayoutDefault from '../../components/LayoutDefault';
 import { registerCreate } from '../../shared/actions/Register.action';
 import { IoIosCheckmarkCircleOutline, IoMdClose } from 'react-icons/io';
 
-const Register = props => {
+const Register = ({next}) => {
 
     const dispatch = useDispatch();
     const [page, setPage] = React.useState(0);
@@ -55,9 +55,11 @@ const Register = props => {
 
     let screen = (
         <React.Fragment>
-            <div  className={styles.register_content_header}>
+            <div  className={styles.register_content_header} >
                 <h2>Submit Your Entry</h2>
-                <IoMdClose color="#000" size={30} />
+                <div onClick={() => next(3)}>
+                    <IoMdClose color="#000" size={30} />
+                </div>
             </div>
             <form className={styles.register_content_form} onSubmit={handleSubmit(onSubmit)}>
                 <div className={styles.register_formgroup}>

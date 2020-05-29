@@ -1,5 +1,20 @@
 @import '../../shared//styles/mixins';
 
+.container {
+    color: #FFFFFF;
+    padding: 20px 0;
+    background-color: #171717;   
+
+    @include screen('desktop') {
+        position:absolute;
+        overflow:hidden;
+        height:100%;
+        width:100%;
+        top:0;
+        left:0;
+    }
+}
+
 .banner_web_image {
     // width: 48%;
     img {
@@ -111,6 +126,8 @@
     position: absolute;
     bottom: 78px;
     left: 100px;
+
+    z-index: 1000;
 }
 
 .hr {
