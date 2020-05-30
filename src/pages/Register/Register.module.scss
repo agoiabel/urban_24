@@ -220,16 +220,18 @@
     color: #FFFFFF;    
 }
 .auth_screen_bg1 {
+    display: none;
+
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
 
     position: absolute;
-    bottom: 0;
+    bottom: 1;
     left: 0;    
 
     @include screen('tablet') {
-        display: none;
+        display: block;
     }
 }
 a.link_text {    

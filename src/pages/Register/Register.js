@@ -1,4 +1,5 @@
 import React from 'react';
+import states from '../../shared/states';
 import { Link } from  'react-router-dom';
 import { FiShare2 } from 'react-icons/fi';
 import { useForm } from "react-hook-form";
@@ -25,6 +26,7 @@ const Register = props => {
     const { height, width } = useWindowDimensions();
     const [isLoading, setIsLoading] = React.useState(false);
     const [linkClicked, setlinkClicked] = React.useState(false);
+    const [formattedStates, setFormattedStates] = React.useState([]);
 	const {status, message} = useSelector(state => state.RegisterReducer);
     const { register, handleSubmit, formState, errors, setValue, control } = useForm({
         mode: "onChange",
@@ -69,6 +71,16 @@ const Register = props => {
     const setLinkClicked = () => {
         setlinkClicked(true);
     }
+
+    React.useEffect(() => {
+        let formattedStates = states.map(state => {
+            let newState = {};
+            newState['value'] = state;
+            newState['label'] = state;
+            return newState;
+        });
+        setFormattedStates(formattedStates);
+    }, []);
 
     const button = () => {
         const color  = (!formState.isValid || !files.length) ? `#EAEAEA` : ``;
@@ -136,7 +148,7 @@ const Register = props => {
                 </div>
 
                 <div className={styles.register_formgroup}>
-                    <Select name={"state"} options={options} control={control} placeholder="State Of Residency" defaultValues={options[0]} errors={errors.state} rules={{ required: "state is required" }} />
+                    <Select name={"state"} options={formattedStates} control={control} placeholder="State Of Residency" defaultValues={formattedStates[0]} errors={errors.state} rules={{ required: "state is required" }} />
                 </div>
 
                 <div className={styles.register_formgroup} style={{ marginTop: '1rem' }}>
