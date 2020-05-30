@@ -10,15 +10,15 @@ const Nav = ({ logo, light, centered }) => {
                     <img src={logo} alt="Urban24 logo" />
                 </div>}
                 <div className={` ${styles.navbar_links} ${centered && styles.centered}`}>
-                    <Link to="/terms">
-                        <a className={`link-text color-${light} ${styles.link}`}>Terms and Conditions</a>
+                    <Link to="/terms" className={`link-text color-${light} ${styles.link}`}>
+                        Terms and Conditions
                     </Link>
-                    <Link to="/about">
-                        <a className={`link-text color-${light} ${styles.link}`}>About</a>
-                    </Link>
-                    <Link to="/landing">
-                        <a className={`link-text color-${light} ${styles.link}`}>OPPO.com</a>
-                    </Link>
+                    <a to="/about" className={`link-text color-${light} ${styles.link}`} href={"https://www.oppo.com/en/"} target="_blank">
+                        About
+                    </a>
+                    <a className={`link-text color-${light} ${styles.link}`} href={"https://www.oppo.com/en/"} target="_blank">
+                        oppo.com
+                    </a>
                 </div>                    
             </div>
         </React.Fragment>

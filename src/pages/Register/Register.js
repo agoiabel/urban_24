@@ -170,9 +170,9 @@ const Register = props => {
             <div className="text-center">
                 <IoIosCheckmarkCircleOutline color="#099330" size={100} style={{ marginBottom: '1rem' }} />
                 <h2>Your entry was submitted successfully</h2>
-                <div className={styles.external_link}>
+                <a className={styles.external_link} href={'https://www.oppo.com/ng/smartphone-reno3/'} target="_blank">
                     Learn more about Reno3 Series
-                </div>
+                </a>
             </div>
         )
     }

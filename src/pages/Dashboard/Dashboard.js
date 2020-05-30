@@ -49,7 +49,7 @@ const Dashboard = props => {
                     },
                     {
                         key: 'date_of_birth',
-                        title: 'Date of birth',
+                        title: 'Age',
                         cell: 'Default',
                     },
                     // {

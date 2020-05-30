@@ -9,15 +9,16 @@ import { FiArrowLeft } from "react-icons/fi";
 import { MdLocationOn } from "react-icons/md";
 import { FaBirthdayCake } from "react-icons/fa";
 import AppLayout from '../../components/AppLayout';
+import { useToasts } from 'react-toast-notifications';
 import { useDispatch, useSelector } from "react-redux";
 import { IoIosCloseCircleOutline } from "react-icons/io";
-import { userGet } from '../../shared/actions/User.action';
+import { userGet, userUpdate } from '../../shared/actions/User.action';
 import { AiOutlineUser, AiOutlineMail, AiOutlinePhone, AiOutlineDownload } from "react-icons/ai";
 
 const UserShow = props => {
 
-    // const router = useRouter();
     const dispatch = useDispatch();
+    const { addToast } = useToasts();
     const [isOpen, setIsOpen] = React.useState(false);
     const [photoIndex, setPhotoIndex] = React.useState(0);
     const {user, status, message} = useSelector(state => state.UserReducer);
@@ -25,13 +26,28 @@ const UserShow = props => {
     React.useEffect(() => {
         dispatch( userGet(props.match.params.id) );
     }, []);
-    
+
+    const update = user => {
+        dispatch( userUpdate({
+            user_id: user._id
+        }) );
+    }
+
+    React.useEffect(() => {
+        if (message !== null) {
+            addToast(message, {
+                appearance: 'success',
+                autoDismiss: true,
+            });
+        }
+    }, [message]);
+
     let container = (
         <div className={styles.user_box}>
             <Loader />
         </div>
     );
-
+    
     if (status === 422) {
         container = (
             <div className={styles.user_box}>
@@ -109,7 +125,7 @@ const UserShow = props => {
                     </div>
 
                     <div className={styles.user_add_button}>
-                        <Button type={'btn__transparent__dark'} size={'btn__large'}>{user.is_selected ? 'Remove From Finalists' : 'Add To Finalists'}</Button>
+                        <Button onClick={() => update(user)} type={'btn__transparent__dark'} size={'btn__large'}>{user.is_selected ? 'Remove From Finalists' : 'Add To Finalists'}</Button>
                     </div>
                     <div className={styles.user_download_button}>
                         <Button type={'btn__primary__solid'} size={'btn__large'} onClick={() => setIsOpen(true)}>Open Images</Button>
@@ -124,7 +140,7 @@ const UserShow = props => {
 		<AppLayout pageStyle={styles.user}>
             <div className={styles.navigate}>
                 <Link to="/dashboard" as="/dashboard">
-                    <FiArrowLeft size={30} />
+                    <FiArrowLeft size={30} color={'#000000'} />
                 </Link>
             </div>
             {container}

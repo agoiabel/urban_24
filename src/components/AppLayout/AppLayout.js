@@ -11,7 +11,7 @@ import { getStorage, removeStorage } from '../../shared/storage';
 
 const AppLayout = props => {
     const [isAuthenticated, setIsAuthenticated] = React.useState(0);
-
+    
     const logout = async () => {
         try {
             await removeStorage('URBAN24');
@@ -21,7 +21,6 @@ const AppLayout = props => {
             alert('error deleting storage')
         }
     }
-
 
     React.useEffect(() => {
         onLoad();
@@ -60,20 +59,15 @@ const AppLayout = props => {
                     <img className={styles.app_screen_bg2} src={AuthBg2} alt="Urban24 sign up" />
                     <img className={styles.app_screen_bg3} src={AuthBg1} alt="Urban24 sign up" />
                     <img className={styles.app_screen_bg4} src={AuthBg2} alt="Urban24 sign up" />
-                    
-                    {/* <img className={styles.auth_screen_bg1} src={require('../../public/images/auth_bg_abel.svg')} alt="Urban24 sign up" />
-                    <img className={styles.auth_screen_bg2} src={AuthBg2} alt="Urban24 sign up" /> */}
 
                     <div className={styles.sidebar_content}>
                         <div className={styles.sidebar_content_logo}>
                             <img src={logo} alt="Urban24 logo" />
                         </div>
                         <div className={styles.sidebar_content_routes}>
-                            <Link to="/dashboard">
-                                <a className={styles.route}>
-                                    <FiList color="#fff" size={20} style={{ marginRight: '1rem', transform: 'rotate(180deg)' }} />
-                                    <p>Entries</p>
-                                </a>
+                            <Link to="/dashboard" className={styles.route}>
+                                <FiList color="#fff" size={20} style={{ marginRight: '1rem', transform: 'rotate(180deg)' }} />
+                                <p>Entries</p>
                             </Link>
                         </div>
                         <div className={styles.sidebar_content_logout} onClick={() => logout()}>

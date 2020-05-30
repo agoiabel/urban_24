@@ -67,8 +67,8 @@ const Forgotpassword = props => {
                 <div className={authStyles.auth_form_box}>
                     { screen }
                     <div className={authStyles.auth_link}>
-                        <Link to="/login">
-                            <a className="link-text">Return to Login</a>
+                        <Link to="/login" className="link-text">
+                            Return to Login
                         </Link>
                     </div>
                 </div>

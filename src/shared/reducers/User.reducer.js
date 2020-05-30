@@ -18,7 +18,10 @@ const initialState = {
 const reducer = (state = initialState, action) => {
     const lookup = {
         [USER.GET_SUCCESSFUL]: show,
-        [USER.GET_UNSUCCESSFUL]: show
+        [USER.GET_UNSUCCESSFUL]: show,
+
+        [USER.UPDATE_SUCCESSFUL]: show,
+        [USER.UPDATE_UNSUCCESSFUL]: show,
     }
     return lookup[action.type] ? lookup[action.type](state, action) : state;
 }

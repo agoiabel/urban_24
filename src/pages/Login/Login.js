@@ -59,8 +59,8 @@ const Login = props => {
                         <Button type={'btn__primary__solid'} size={'btn__large'} isLoading={isLoading} disabled={!formState.isValid}>Login</Button>
                     </form>
                     <div className={authStyles.auth_link}>
-                        <Link to="/forgotpassword" as="/forgotpassword">
-                            <a className="link-text">Forgot password</a>
+                        <Link to="/forgotpassword" as="/forgotpassword" className="link-text">
+                            Forgot password
                         </Link>
                     </div>
                 </div>

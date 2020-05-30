@@ -6,9 +6,9 @@ const Header = props => {
     return (
         <div className={styles.wrapper}>
             <div className={styles.logo_navs}>
-                <div className={styles.logo}>
+                <Link className={styles.logo} to={'/'}>
                     <img src={require('../../images/urban24-logo.png')} alt="Urban24 logo" />
-                </div>
+                </Link>
 
                 <div className={styles.navs}>
                     <div>
@@ -18,7 +18,7 @@ const Header = props => {
                         <Link to={'/terms'} className={`${styles.nav} ${styles.link}`}>About</Link>
                     </div>
                     <div className={`${styles.nav} ${styles.link}`}>
-                        <Link to={'/terms'} className={`${styles.nav} ${styles.link}`}>OPPO.com</Link>
+                        <a href={"https://www.oppo.com/en/"} target="_blank" className={`${styles.nav} ${styles.link}`}>OPPO.com</a>
                     </div>
                 </div>
             </div>

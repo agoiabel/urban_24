@@ -141,7 +141,7 @@ const Table = props => {
             makeDecision = props.actions.map(action => {
                 return (
                     <span key={action.key} className={styles.m_action}>
-                        <Button type={'btn__primary__outline'} size={'btn__medium'} btnStyle={{ marginBottom: 0 }} onClick={() => actionExecutor(action)}>{action.name}</Button>
+                        <Button type={'btn__transparent__dark'} size={'btn__medium'} btnStyle={{ marginBottom: 0 }} onClick={() => actionExecutor(action)}>{action.name}</Button>
                     </span>
                 )
             })
@@ -191,7 +191,7 @@ const Table = props => {
                 </div>
                 <div className={styles.button_actions}>
                     <div className={styles.export_button}>
-                        <Button type={'btn__primary__outline'} btnStyle={{ marginBottom: 0 }} size={'btn__medium'}>
+                        <Button type={'btn__transparent__dark'} btnStyle={{ marginBottom: 0 }} size={'btn__medium'}>
                             <ReactHTMLTableToExcel
                                 id="test-table-xls-button"
                                 className={`download-table-xls-button ${styles.download_xls}`}
