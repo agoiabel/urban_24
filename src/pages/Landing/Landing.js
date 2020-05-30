@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Register from '../Register';
 
 import styles from './Landing.module.scss';

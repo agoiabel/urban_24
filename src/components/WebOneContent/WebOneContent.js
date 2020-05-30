@@ -32,6 +32,8 @@ const WebOneContent = ({next}) => {
                     </div>
                 </div>
             </div>
+
+            <img className={styles.auth_screen_bg1} src={require('../../images/footer_guest.svg')} alt="Urban24 sign up" />
         </div>
     )
 }

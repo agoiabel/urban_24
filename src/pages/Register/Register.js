@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from  'react-router-dom';
+import { FiShare2 } from 'react-icons/fi';
 import { useForm } from "react-hook-form";
 import Input from '../../components/Input';
 import styles from './Register.module.scss';
@@ -10,6 +11,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { FaFacebookF, FaTwitter } from 'react-icons/fa';
 import FileUploader from '../../components/FileUploader';
 import LayoutDefault from '../../components/LayoutDefault';
+import TwitterSvg from '../../components/TwitterSvg/TwitterSvg';
+import FacebookSvg from '../../components/FacebookSvg/FacebookSvg';
 import { registerCreate } from '../../shared/actions/Register.action';
 import { IoIosCheckmarkCircleOutline, IoMdClose } from 'react-icons/io';
 
@@ -19,6 +22,7 @@ const Register = ({next}) => {
     const [page, setPage] = React.useState(0);
     const [files, setFiles] = React.useState([]);
     const [isLoading, setIsLoading] = React.useState(false);
+    const [linkClicked, setlinkClicked] = React.useState(false);
 	const {status, message} = useSelector(state => state.RegisterReducer);
     const { register, handleSubmit, formState, errors, setValue, control } = useForm({
         mode: "onChange",
@@ -53,6 +57,41 @@ const Register = ({next}) => {
         }
     }, [status, message]);
 
+
+    const setLinkClicked = () => {
+        setlinkClicked(true);
+    }
+
+    let button = () => {
+
+        const color  = (!formState.isValid || !files.length) ? `#EAEAEA` : ``;
+        let content = (
+            <div className={styles.share}>
+                <div className={styles.share_title}><span className={styles.share_icon}> <FiShare2 /> </span> <span>Share on</span></div>
+                <a className={styles.share_fb} onClick={setLinkClicked} href="https://www.facebook.com/sharer/sharer.php?u=reno3urban24.ng/&description=please visit this site" target="_blank">
+                    <FacebookSvg color={color} />
+                </a>
+                <a className={styles.share_tw} onClick={setLinkClicked} href="https://twitter.com/intent/tweet?url=reno3urban24.ng/&text=please visit this site>" target="_blank">
+                    <TwitterSvg color={color} />
+                </a>
+            </div>
+        )
+
+        if (linkClicked) {
+            content = (
+                <div className={styles.register_formgroup}>
+                    <Button type={'btn__primary__solid'} size={'btn__large'} isLoading={isLoading} disabled={!formState.isValid || !files.length}>Submit</Button>
+                </div>
+            )
+        }
+
+        return (
+            <React.Fragment>
+                { content }
+            </React.Fragment>
+        )
+    }
+
     let screen = (
         <React.Fragment>
             <div  className={styles.register_content_header} >
@@ -69,10 +108,6 @@ const Register = ({next}) => {
                 <div className={styles.register_formgroup}>
                     <Input type={'text'} name="lastname" control={control} placeholder="Last Name" errors={errors.lastname} rules={{required: "lastname is a required", maxLength: {value: 30, message: "Max length is 30"}, minLength: {value: 3, message: "Min length is 3"}}} />
                 </div>
-                
-                <div className={styles.register_formgroup}>
-                    <Input type={'number'} name="phonenumber" control={control} placeholder="Phone Number" errors={errors.phonenumber} rules={{required: "phonenumber is a required", maxLength: {value: 11, message: "Max length is 11"}, minLength: {value: 11, message: "Min length is 11"}}} />
-                </div>
 
                 <div className={styles.register_formgroup}>
                     <Input type={'email'} name="email" control={control} placeholder="Email Address" errors={errors.email} rules={{required: "email is a required",pattern: {
@@ -82,7 +117,11 @@ const Register = ({next}) => {
                 </div>
 
                 <div className={styles.register_formgroup}>
-                    <Input type={"date"} name="date_of_birth" control={control} placeholder="Date Of Birth" errors={errors.date_of_birth} rules={{required: "date_of_birth is a required"}} />
+                    <Input type={'number'} name="phonenumber" control={control} placeholder="Phone Number" errors={errors.phonenumber} rules={{required: "phonenumber is a required", maxLength: {value: 11, message: "Max length is 11"}, minLength: {value: 11, message: "Min length is 11"}}} />
+                </div>
+
+                <div className={styles.register_formgroup}>
+                    <Input type={"number"} name="date_of_birth" control={control} placeholder="Age" errors={errors.date_of_birth} rules={{required: "age is a required"}} />
                 </div>
 
                 <div className={styles.register_formgroup}>
@@ -101,9 +140,8 @@ const Register = ({next}) => {
                     <FileUploader setFiles={setFiles} />
                 </div>
 
-                <div className={styles.register_formgroup}>
-                    <Button type={'btn__primary__solid'} size={'btn__large'} isLoading={isLoading} disabled={!formState.isValid || !files.length}>Submit</Button>
-                </div>
+                { button() }
+
             </form>
         </React.Fragment>
     );
@@ -113,23 +151,8 @@ const Register = ({next}) => {
             <div className="text-center">
                 <IoIosCheckmarkCircleOutline color="#099330" size={100} style={{ marginBottom: '1rem' }} />
                 <h2>Your entry was submitted successfully</h2>
-                <div className={styles.register_content_share}>
-                    <a 
-                        href="https://www.facebook.com/sharer/sharer.php?u=example.org&description=please visit this site"
-                        target="_blank"
-                        className={styles.register_content_share_button}
-                    >
-                        <FaFacebookF color="#fff" size={15} style={{ marginRight: '0.5rem' }} />
-                        <p>Share on Facebook</p>
-                    </a>
-                    <a 
-                        href="https://twitter.com/intent/tweet?url=example.org&text=please visit this site>"
-                        target="_blank"
-                        className={styles.register_content_share_button}
-                    >
-                        <FaTwitter color="#fff" size={15} style={{ marginRight: '0.5rem' }} />
-                        <p>Share on Twitter</p>
-                    </a>
+                <div className={styles.external_link}>
+                    Learn more about Reno3 Series
                 </div>
             </div>
         )
@@ -153,9 +176,12 @@ const Register = ({next}) => {
                 <div className={styles.register_content}>
                     <div className={styles.register_content_wrapper}>
                         { screen }
+
+                        <img className={styles.auth_screen_bg1} src={require('../../images/register_footer.svg')} alt="Urban24 sign up" />
+
                         <div className="text-center">
-                            <Link to="/terms">
-                                <a className="link-text">Terms and Conditions</a>
+                            <Link to="/terms" className={styles.link_text}>
+                                Terms and Conditions
                             </Link>
                         </div>
                     </div>

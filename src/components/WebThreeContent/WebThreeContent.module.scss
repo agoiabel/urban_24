@@ -20,6 +20,8 @@
     position: absolute;
     bottom: 78px;
     left: 100px;
+    z-index: 1;
+
 }
 .item_number {
     width: 50px;
@@ -123,4 +125,16 @@
     position: relative;
     left: 40%;
     bottom: 120px;   
+
+    z-index: 1;
+}
+
+.auth_screen_bg1 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;    
 }

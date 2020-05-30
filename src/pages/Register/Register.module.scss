@@ -20,6 +20,7 @@
     flex-direction: column;
     width: 100%;
     height: 100vh;
+    min-height: 100vh;
     overflow: hidden;
 
     @include screen('tablet') {
@@ -72,8 +73,6 @@
         }
     }
 }
-
-
 
 .register_content {
     @include flex(flex, null, null, center, center);
@@ -182,4 +181,62 @@
 	@include screen('tablet') {
         width: 100%;
     }
+}
+
+.share {
+    @include flex(flex, null, null, space-between, center);
+
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 29px;
+    text-align: center;
+    
+    color: #646464;
+    margin: 0 auto;
+    
+    .share_title {
+        display: flex;
+        align-items: center;
+    }
+    .share_icon {
+        margin-right: 10px;
+    }
+}
+.external_link {
+    display: inline-flex;
+
+    background: #0F0F0F;
+    padding: 15px 25px;
+    margin: 30px 0;
+
+    font-family: "Roboto";
+    font-weight: normal;
+    font-style: normal;
+    text-align: center;
+    line-height: 29px;
+    font-size: 25px;    
+    color: #FFFFFF;    
+}
+.auth_screen_bg1 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;    
+}
+a.link_text {    
+    text-decoration: none;    
+    font-family: "Roboto";
+    font-weight: normal;
+    font-style: normal;
+    line-height: 18px;    
+    color: #BFBFBF;   
+    font-size: 15px;
+
+    cursor: pointer;
+    margin-top: 30px;
 }

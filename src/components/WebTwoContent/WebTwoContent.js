@@ -44,6 +44,8 @@ const WebTwoContent = ({next}) => {
                     <div className={styles.item_number}><IoMdArrowBack /></div>
                 </div>
             </div>
+
+            <img className={styles.auth_screen_bg1} src={require('../../images/footer_guest.svg')} alt="Urban24 sign up" />
         </div>
     )
 }
