@@ -27,15 +27,17 @@ const Login = props => {
     };
 
 	React.useEffect(() => {
-        setIsLoading(false);
 		if (status === 422) {
+            setIsLoading(false);
             return alert(message);
 		}
 		if (status === 200) {
-            if (props.location.search.length) {
-                return props.history.push(props.location.search.split("=")[1]);
-            }
-            return props.history.push('/dashboard');
+            setTimeout(() => { 
+                if (props.location.search.length) {
+                    return props.history.push(props.location.search.split("=")[1]);
+                }
+                return props.history.push('/dashboard');
+            }, 1000);
         }
     }, [status, message]);
     

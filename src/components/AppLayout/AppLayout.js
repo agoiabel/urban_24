@@ -6,9 +6,11 @@ import AuthBg1 from '../../images/auth1.svg';
 import AuthBg2 from '../../images/auth2.svg';
 import logo from '../../images/urban24-logo.png';
 import { FiLogOut, FiList } from 'react-icons/fi';
+import check_status from '../../shared/check_status';
 import { getStorage, removeStorage } from '../../shared/storage';
 
 const AppLayout = props => {
+    const [isAuthenticated, setIsAuthenticated] = React.useState(0);
 
     const logout = async () => {
         try {
@@ -17,6 +19,27 @@ const AppLayout = props => {
             return props.history.push('/');
         } catch (err) {
             alert('error deleting storage')
+        }
+    }
+
+
+    React.useEffect(() => {
+        onLoad();
+    }, []);
+    
+    async function onLoad() {
+        try {
+            const token = await check_status();
+            const status = token !== null ? true : false;
+            const user = await getStorage('URBAN24');
+
+            setIsAuthenticated(status);
+
+            if (!status || !user.is_admin) {
+                props.history.push('/unrestricted');
+            }
+        } catch (e) {
+            console.dir(e);
         }
     }
 
