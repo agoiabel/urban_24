@@ -60,7 +60,7 @@ const Landing = () => {
     }
 
     let container = (
-        <MobileContent />
+        <MobileContent next={next} />
     )
 
     if (width > 1200) {

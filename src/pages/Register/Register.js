@@ -10,17 +10,19 @@ import Select from '../../components/Select';
 import { useDispatch, useSelector } from "react-redux";
 import { FaFacebookF, FaTwitter } from 'react-icons/fa';
 import FileUploader from '../../components/FileUploader';
+import useWindowDimensions from '../../shared/dimension';
 import LayoutDefault from '../../components/LayoutDefault';
 import TwitterSvg from '../../components/TwitterSvg/TwitterSvg';
 import FacebookSvg from '../../components/FacebookSvg/FacebookSvg';
 import { registerCreate } from '../../shared/actions/Register.action';
 import { IoIosCheckmarkCircleOutline, IoMdClose } from 'react-icons/io';
 
-const Register = ({next}) => {
+const Register = props => {
 
     const dispatch = useDispatch();
     const [page, setPage] = React.useState(0);
     const [files, setFiles] = React.useState([]);
+    const { height, width } = useWindowDimensions();
     const [isLoading, setIsLoading] = React.useState(false);
     const [linkClicked, setlinkClicked] = React.useState(false);
 	const {status, message} = useSelector(state => state.RegisterReducer);
@@ -57,13 +59,18 @@ const Register = ({next}) => {
         }
     }, [status, message]);
 
+    const redirect = () => {
+        if (width > 1200) {
+            return props.next(3);
+        }
+        return props.history.push('/');
+    }
 
     const setLinkClicked = () => {
         setlinkClicked(true);
     }
 
-    let button = () => {
-
+    const button = () => {
         const color  = (!formState.isValid || !files.length) ? `#EAEAEA` : ``;
         let content = (
             <div className={styles.share}>
@@ -96,7 +103,7 @@ const Register = ({next}) => {
         <React.Fragment>
             <div  className={styles.register_content_header} >
                 <h2>Submit Your Entry</h2>
-                <div onClick={() => next(3)}>
+                <div onClick={() => redirect()}>
                     <IoMdClose color="#000" size={30} />
                 </div>
             </div>

@@ -2,12 +2,13 @@ import React from 'react';
 import Header from '../Header';
 import Button from '../Button';
 import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import styles from './MobileContent.module.scss';
 
 const MobileContent = props => {
     
-    const popUp = () => {
-        
+    const gotoNext = () => {
+        props.history.push('/register');
     }
 
     return (
@@ -101,7 +102,7 @@ const MobileContent = props => {
                         </div>
                     </div>
 
-                    <Button onClick={() => popUp()} type={'btn__primary__outline'} size={'btn__large'}>Enter Contest</Button>
+                    <Button onClick={gotoNext} type={'btn__primary__outline'} size={'btn__large'}>Enter Contest</Button>
                 </div>
             </div>
 
@@ -120,4 +121,4 @@ const MobileContent = props => {
     )
 }
 
-export default MobileContent;
+export default withRouter(MobileContent);
