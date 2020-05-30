@@ -205,7 +205,7 @@ const Table = props => {
                     { makeSelection() }
                 </div>
             </div>
- 
+            {/* Update */}
             <table className={`${styles.table} ${styles.table_bordered} ${styles.table_striped}`} id="table-to-xls">
                 <thead className={styles.thead}>
                     <tr className={styles.tr}>
