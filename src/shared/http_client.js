@@ -1,6 +1,7 @@
 import { getStorage } from './storage';
-// const url = 'https://urban24.herokuapp.com/api/';
-const url = 'http://localhost:7000/api/';
+
+const url = 'https://urban24api.herokuapp.com/api/';
+// const url = 'http://localhost:7000/api/';
 
 export const post = async (form_data, end_point) => {
     const token = await getStorage('URBAN24_TOKEN');

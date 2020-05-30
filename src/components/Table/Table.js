@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {get, multipleActionExecutor} from './Table.action';
 import ReactHTMLTableToExcel from 'react-html-table-to-excel';
 import {MdCheckBox, MdCheckBoxOutlineBlank, MdSearch} from 'react-icons/md';
+import {GoIssueOpened} from 'react-icons/go';
 
 const Table = props => {
     
@@ -92,7 +93,7 @@ const Table = props => {
                             }
                         )}
 
-                        <td className={styles.td}><span onClick={() => redirectToShow(row)}>OPEN</span></td>
+                        <td className={styles.td}><span onClick={() => redirectToShow(row)}><GoIssueOpened /></span></td>
                     </tr>
                 )
             });

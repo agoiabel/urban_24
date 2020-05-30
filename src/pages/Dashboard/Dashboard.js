@@ -52,11 +52,11 @@ const Dashboard = props => {
                         title: 'Date of birth',
                         cell: 'Default',
                     },
-                    {
-                        key: 'is_selected',
-                        title: 'Selected',
-                        cell: 'Default',
-                    },
+                    // {
+                    //     key: 'is_selected',
+                    //     title: 'Selected',
+                    //     cell: 'Default',
+                    // },
                 ]}
                 actions={[
                     {
