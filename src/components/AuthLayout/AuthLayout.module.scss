@@ -75,6 +75,13 @@
     width: 95%;
     max-width: 450px;
 }
+.auth_form_box-enter {
+    opacity: 0;
+}
+.auth_form_box-enter-active {
+    opacity: 1;
+    transition: opacity 1000ms;
+}
 
 .auth_link {
     margin-top: .5rem;
