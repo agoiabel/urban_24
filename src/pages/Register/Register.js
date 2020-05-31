@@ -172,7 +172,7 @@ const Register = props => {
         </div>
     );
 
-    if (page === 0) {
+    if (page === 1) {
         screen = (
             <div className={styles.success_container}>
                 <div className="text-center">
