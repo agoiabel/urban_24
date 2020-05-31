@@ -111,3 +111,31 @@ $danger                :   #ec5252;
     width: 100%;
     @extend %btn_size;
 }
+
+
+@keyframes spin{
+    100%{
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+.circle_container {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.circle {
+    text-align: center;
+
+    box-sizing: border-box;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    border: 2px solid rgba(#0F0F0F, 0.2);
+    border-top-color: #0F0F0F;
+    animation: spin 1s infinite linear;
+}

@@ -41,7 +41,7 @@ const Button = ({type, size, onClick, children, isLoading, disabled, iconName, i
 
     let button = (
         <button onClick={onClick} className={`${styles.btn} ${typeClass} ${sizeClass}`} style={btnStyle} disabled={disabled || isLoading}>
-            { !isLoading ? (<div>{content}</div>) : (<div><FaSpinner className={'fa-spin'} /> ...loading</div>) }
+            { !isLoading ? (<div>{content}</div>) : (<div className={styles.circle_container}><span className={styles.circle}></span></div>) }
         </button>
     );
 
