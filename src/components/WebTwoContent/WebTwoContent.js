@@ -7,8 +7,6 @@ import styles from './WebTwoContent.module.scss';
 
 const WebTwoContent = ({next}) => {
 
-
-    
     return (
         <motion.div className={styles.container}>
             <Header />

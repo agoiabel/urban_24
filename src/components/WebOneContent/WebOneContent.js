@@ -21,18 +21,16 @@ const WebOneContent = ({next}) => {
                         <motion.div initial={{ opacity: 0, y: '30px'}} animate={{ opacity: 1, y: 0 }} transition={{duration: 3, delay: 0.7}} className={`${styles.banner_title} ${styles.banner_sub_title}`}>Every Light</motion.div>
                     </div>
 
-                    <div>
-                        <motion.p initial={{ x: '100%', opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{duration: 1, delay: 1}} className={`${styles.banner_content_description}`}>
-                            Urban 24 is a modeling search by leading smartphone brand OPPO, 
-                            geared to discover the stars of tomorrow and launch the careers 
-                            of aspiring models dreaming of becoming one of the glamorous few 
-                            to represent Nigeria to the world.
-                            
-                            <div className={styles.web_button}>
-                                <Button onClick={() => next(2)} type={'btn__primary__outline'} size={'btn__large'}>Next</Button>
-                            </div>
-                        </motion.p>
-                    </div>
+                    <motion.p initial={{ x: '100%', opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{duration: 1, delay: 1}} className={`${styles.banner_content_description}`}>
+                        Urban 24 is a modeling search by leading smartphone brand OPPO, 
+                        geared to discover the stars of tomorrow and launch the careers 
+                        of aspiring models dreaming of becoming one of the glamorous few 
+                        to represent Nigeria to the world.
+                        
+                        <div className={styles.web_button}>
+                            <Button onClick={() => next(2)} type={'btn__primary__outline'} size={'btn__large'}>Next</Button>
+                        </div>
+                    </motion.p>
                 </div>
             </div>
 

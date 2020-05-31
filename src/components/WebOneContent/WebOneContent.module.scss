@@ -14,29 +14,32 @@
         left:0;
     }
 }
-.banner_web_one {
-    display: flex;
-    flex-direction: row;
+.banner_content_description {
+    position: absolute;
+    z-index: 1000;
 
-    .banner_content_description {
-        width: 70%;
-        margin-left: 15px;
-
-        @include screen("(min-width: 1200px)") {
-            width: 60%;
-            margin-top: 500px;
-            margin-left: 100px;    
-        }
-
-        @include screen("(min-width: 1300px)") {
-            width: 40%;
-            margin-top: 500px;
-            margin-left: 100px;    
-        }
+    @include screen("desktop") {
+        width: 20%;
+        right: 5%;
+        top: 70%;
+    }
+    @include screen("(min-width: 1300px)") {
+        right: 20%;
+        width: 20%;
+        top: 70%;
+    }
+    @include screen("(min-width: 1400px)") {
+        right: 29%;
+        width: 20%;
+        top: 70%;
+    }
+    @include screen("(max-height: 600px)") {
+        top: 60%;
+        right: 20%;
+        width: 27%;
     }
 }
 .banner_web_image {
-    // width: 48%;
     img {
         height: 100%;
         margin-top: 50px;
@@ -44,12 +47,21 @@
 
         position: relative;
         z-index: 2;
+
+        @include screen("(max-height: 600px)") {
+            max-height: 100vh;
+        }
     }
 }
 .banner_web_header {
     position: absolute;
-    top: 190px;
-    left: 400px;
+    top: 20%;
+    left: 25%;
+
+    @include screen("(max-height: 700px)") {
+        top: 15%;
+        left: 32%;
+    }
 }
 .banner_title {
     font-family: "Roboto";
@@ -61,15 +73,23 @@
     @include screen("(min-width: 1200px)") {
         font-size: 120px;
     }
-
     @include screen("(min-width: 1300px)") {
         font-size: 133px;
+    }
+    @include screen("(max-height: 600px)") {
+        font-size: 100px;
     }
 }
 .banner_sub_title {
     position: relative;
     left: 250px;
+
+    @include screen("(max-height: 600px)") {
+        top: -50px;
+        left: 150px;
+    }
 }
+
 .web_button {
     width: 80%;
     margin: 50px auto;

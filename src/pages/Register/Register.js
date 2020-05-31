@@ -87,7 +87,12 @@ const Register = props => {
         const color  = (!formState.isValid || !files.length) ? `#EAEAEA` : ``;
         let content = (
             <div className={styles.share}>
-                <div className={styles.share_title}><span className={styles.share_icon}> <FiShare2 /> </span> <span>Share on</span></div>
+                <div>
+                    <div className={styles.share_title}>
+                        <span className={styles.share_icon}> <FiShare2 /> </span> <span>Share on</span>
+                    </div>
+                    <div className={styles.share_sub}>You need to share before you can submit</div>
+                </div>
                 <a className={styles.share_fb} onClick={setLinkClicked} href="https://www.facebook.com/sharer/sharer.php?u=reno3urban24.ng/&description=please visit this site" target="_blank">
                     <FacebookSvg color={color} />
                 </a>
@@ -167,14 +172,16 @@ const Register = props => {
         </div>
     );
 
-    if (page === 1) {
+    if (page === 0) {
         screen = (
-            <div className="text-center">
-                <IoIosCheckmarkCircleOutline color="#099330" size={100} style={{ marginBottom: '1rem' }} />
-                <h2>Your entry was submitted successfully</h2>
-                <a className={styles.external_link} href={'https://www.oppo.com/ng/smartphone-reno3/'} target="_blank">
-                    Learn more about Reno3 Series
-                </a>
+            <div className={styles.success_container}>
+                <div className="text-center">
+                    <IoIosCheckmarkCircleOutline color="#099330" size={100} style={{ marginBottom: '1rem' }} />
+                    <h2>Your entry was submitted successfully</h2>
+                    <a className={styles.external_link} href={'https://www.oppo.com/ng/smartphone-reno3/'} target="_blank">
+                        Learn more about Reno3 Series
+                    </a>
+                </div>
             </div>
         )
     }
