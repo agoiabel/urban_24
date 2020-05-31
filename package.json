@@ -19,6 +19,7 @@
     "react-html-table-to-excel": "^2.0.0",
     "react-icons": "^3.10.0",
     "react-image-lightbox": "^5.1.1",
+    "react-intersection-observer": "^8.26.2",
     "react-redux": "^7.2.0",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
