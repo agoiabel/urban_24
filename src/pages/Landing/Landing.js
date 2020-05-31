@@ -63,7 +63,7 @@ const Landing = () => {
         <MobileContent next={next} />
     )
 
-    if (width > 1200) {
+    if (width > 1200) { 
         const Component = TAB_CONTENT[pages.find(page => page.is_active).component];
 
         container = (

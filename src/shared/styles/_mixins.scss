@@ -6,7 +6,7 @@
 //================================================================
 @mixin screen($size) {
     $tablet: "(min-width: 600px)";
-    $desktop: "(min-width: 1000px)";
+    $desktop: "(min-width: 1200px)";
 
     @if $size == desktop {
         @media only screen and #{$desktop} {

@@ -1,4 +1,4 @@
-@import '../../shared//styles/mixins';
+@import '../../shared/styles/mixins';
 
 .container {
     color: #FFFFFF;
@@ -14,7 +14,6 @@
         left:0;
     }
 }
-
 .banner_web_one {
     display: flex;
     flex-direction: row;
@@ -77,15 +76,4 @@
 
     position: relative;
     left: 1.5%;
-    z-index: 1000;
-}
-
-.auth_screen_bg1 {
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-
-    position: absolute;
-    bottom: 0;
-    left: 0;    
 }

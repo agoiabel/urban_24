@@ -113,7 +113,7 @@ const Register = props => {
     }
 
     let screen = (
-        <React.Fragment>
+        <div className={styles.mobile_form}>
             <div  className={styles.register_content_header} >
                 <motion.h2 initial={{ opacity: 0, x: '-70px'}} animate={{ opacity: 1, x: 0 }} transition={{duration: 1}}>Submit Your Entry</motion.h2>
                 <motion.div initial={{ opacity: 0, x: '70px'}} animate={{ opacity: 1, x: 0 }} transition={{duration: 1}} whileHover={{ scale: 1.5, rotate: 360 }} onClick={() => redirect()}>
@@ -164,7 +164,7 @@ const Register = props => {
                 { button() }
 
             </motion.form>
-        </React.Fragment>
+        </div>
     );
 
     if (page === 1) {

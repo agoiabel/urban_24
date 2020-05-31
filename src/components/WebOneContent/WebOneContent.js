@@ -14,11 +14,13 @@ const WebOneContent = ({next}) => {
                 <motion.div className={styles.banner_web_image} initial={{ x: '20%'}} animate={{ x: 0 }} transition={{duration: 1}}>
                     <img  src={require('../../images/reno_web.png')} />
                 </motion.div>
+
                 <div className={styles.banner_web_one_content}>
                     <div className={styles.banner_web_header}>
                         <motion.div initial={{ opacity: 0, y: '-20px'}} animate={{ opacity: 1, y: 0 }} transition={{duration: 3, delay: 0.1}} className={styles.banner_title}>Star in</motion.div>
                         <motion.div initial={{ opacity: 0, y: '30px'}} animate={{ opacity: 1, y: 0 }} transition={{duration: 3, delay: 0.7}} className={`${styles.banner_title} ${styles.banner_sub_title}`}>Every Light</motion.div>
                     </div>
+
                     <div>
                         <motion.p initial={{ x: '100%', opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{duration: 1, delay: 1}} className={`${styles.banner_content_description}`}>
                             Urban 24 is a modeling search by leading smartphone brand OPPO, 
