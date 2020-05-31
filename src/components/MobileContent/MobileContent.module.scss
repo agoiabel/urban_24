@@ -42,6 +42,9 @@
     font-size: 70px;
     line-height: 82px;    
     color: #FFFFFF;
+
+    position: relative;
+    z-index: 2;
 }
 .banner_content_header {
     margin-bottom: 25px;
@@ -60,14 +63,16 @@
 
 
 .banner_two_content {
+    position: relative;
+
     .banner_content_header {
         line-height: 64px;        
     }
 }
 .banner_two_content_header {
-    position: absolute;
-    top: 10%;
-    left: 5%;
+    // position: absolute;
+    // top: 10%;
+    // left: 5%;
 }
 
 .banner_two_content_description {
@@ -167,5 +172,14 @@ a.link {
     }
     .hr {
         order: 0;
+    }
+}
+
+.banner_three_content_image {
+    img {
+        width: 98%;
+
+        position: relative;
+        top: 110px;
     }
 }

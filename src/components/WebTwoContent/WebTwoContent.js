@@ -1,52 +1,47 @@
 import React from 'react';
 import Button from '../Button';
+import Header from '../Header';
+import { motion } from "framer-motion";
 import { IoMdArrowBack } from 'react-icons/io';
 import styles from './WebTwoContent.module.scss';
-import Header from '../Header';
 
 const WebTwoContent = ({next}) => {
+
+
+    
     return (
-        <div className={styles.container}>
+        <motion.div className={styles.container}>
             <Header />
 
             <div className={styles.banner_web_two}>
-                <div className={styles.banner_web_image}>
+                <motion.div initial={{ x: '30%'}} animate={{ x: 0 }} transition={{duration: 1, delay: 0.1}} className={styles.banner_web_image}>
                     <img src={require('../../images/reno_web_2.png')} />
-                </div>
+                </motion.div>
                 
-                <div className={styles.banner_web_one_content}>
+                <div>
                     <div className={styles.banner_web_header}>
-                        <div className={styles.banner_title}>Participate to Win</div>
+                        <motion.div initial={{ opacity: 0}} animate={{ opacity: 1 }} transition={{duration: 1.5, delay: 0.2}} className={styles.banner_title}>Participate <br /><span className={styles.sub_title}>to Win</span></motion.div>
                     </div>
-                    <div>
-                        <div className={styles.items}>
-                            <div className={styles.item}>
-                                <div className={styles.item_number}>1</div>
-                                <div className={styles.item_description}>One Million Naira (N1,000,000)</div>
-                            </div>
-                            <div className={`${styles.item} ${styles.item_two}`}>
-                                <div className={styles.item_number}>2</div>
-                                <div className={styles.item_description}>OPPO Reno3 Smartphone</div>
-                            </div>
-                            <div className={`${styles.item} ${styles.item_three}`}>
-                                <div className={styles.item_number}>3</div>
-                                <div className={styles.item_description}>An exclusive deal to Star the cover of Genevieve Magazine</div>
-                            </div>
-
-                            <div className={styles.web_button}>
-                                <Button onClick={() => next(3)} type={'btn__primary__outline'} size={'btn__large'}>Next</Button>
-                            </div>
-                        </div>
+                    <div className={styles.banner_web_description}>
+                        <motion.p initial={{ opacity: 0}} animate={{ opacity: 1 }} transition={{duration: 1.5, delay: 0.3}} className={styles.item}>
+                            Two Finalists will each win N1,000,000 in cash, a brand new Reno 3 Smartphone, 
+                            media coverage on top news and lifestyle platforms in Nigeria,  
+                            and an exclusive deal to Star the cover of Genevieve Magazine.
+                        </motion.p>
                     </div>
                 </div>
 
-                <div className={styles.back} onClick={() => next(1)}>
+                <motion.div initial={{ opacity: 0}} animate={{ opacity: 1 }} transition={{duration: 1.5, delay: 0.6}} className={styles.web_button}>
+                    <Button onClick={() => next(3)} type={'btn__primary__outline'} size={'btn__large'}>Next</Button>
+                </motion.div>
+
+                <motion.div initial={{ rotate: 180, scale: 1.5 }} animate={{ rotate: 0, scale: 1 }} transition={{duration: 1}} className={styles.back} onClick={() => next(1)}>
                     <div className={styles.item_number}><IoMdArrowBack /></div>
-                </div>
+                </motion.div>
             </div>
 
             <img className={styles.auth_screen_bg1} src={require('../../images/footer_guest.svg')} alt="Urban24 sign up" />
-        </div>
+        </motion.div>
     )
 }
 

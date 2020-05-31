@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import { motion } from "framer-motion";
 import { MdEmail } from "react-icons/md";
 import { useForm } from "react-hook-form";
 import Input from '../../components/Input';
@@ -36,6 +37,14 @@ const Forgotpassword = props => {
         }
     }, [status, message]);
 
+
+    const variants = {
+        hidden: { opacity: 0, y: '100%' },
+        visible: { opacity: 1, y: 0, transition: {
+            duration: 0.5
+        }},
+    }
+
     let screen = (
         <React.Fragment>
             <h1 className={authStyles.auth_form_header}>Enter your account email and we’ll send your password to you.</h1>
@@ -52,9 +61,7 @@ const Forgotpassword = props => {
 
     if (page === 1) {
         screen = (
-            <React.Fragment>
-                <h1 className={authStyles.auth_form_header}>Your password has been sent to personsemail@gmail.com</h1>
-            </React.Fragment>
+            <motion.h1 initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{duration: 2}} className={authStyles.auth_form_header}>Your password has been sent to personsemail@gmail.com</motion.h1>
         );
     }
 
@@ -64,14 +71,14 @@ const Forgotpassword = props => {
                 <img src={logo} alt="Urban24 logo" />
             </div>
             <div className={authStyles.auth_form}>
-                <div className={authStyles.auth_form_box}>
+                <motion.div className={authStyles.auth_form_box} initial={"hidden"} animate={"visible"} variants={variants}>
                     { screen }
                     <div className={authStyles.auth_link}>
                         <Link to="/login" className="link-text">
                             Return to Login
                         </Link>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </AuthLayout>
     )

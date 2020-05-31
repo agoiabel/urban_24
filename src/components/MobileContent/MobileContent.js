@@ -18,7 +18,6 @@ const MobileContent = props => {
             <div className={styles.banner_image}>
                 <img src={require('../../images/landing_banner_sm.png')} /> 
             </div>
-
             <div className={styles.banner_one_content}>
                 <div className={styles.wrapper}>
                     <div className={styles.banner_content_header}>
@@ -34,37 +33,29 @@ const MobileContent = props => {
             </div>
 
             <div className={styles.banner_two_content}>
-                <div className={styles.banner_two_content_description}>
-                    <div className={styles.banner_two_content_header}>
-                        Participate to Win
-                    </div>
-                    <p className={styles.banner_two_content_text}>
-                        <div className={styles.banner_two_content_image}>
-                            <img src={require('../../images/reno_mobile.png')} />
-                        </div>
-
-                        <div className={styles.items}>
-                            <div className={styles.item}>
-                                <div className={styles.item_number}>1</div>
-                                <div className={styles.item_description}>One Million Naira (N1,000,000)</div>
-                            </div>
-                            <div className={`${styles.item} ${styles.item_two}`}>
-                                <div className={styles.item_number}>2</div>
-                                <div className={styles.item_description}>OPPO Reno3 Smartphone</div>
-                            </div>
-                            <div className={`${styles.item} ${styles.item_three}`}>
-                                <div className={styles.item_number}>3</div>
-                                <div className={styles.item_description}>An exclusive deal to Star the cover of Genevieve Magazine</div>
-                            </div>
-                        </div>
-                    </p>
+                <div className={styles.banner_three_content_image}>
+                    <img src={require('../../images/mobile_phone.png')} /> 
                 </div>
+                <div className={styles.wrapper}>
+                        <div className={styles.banner_two_content_header}>
+                            Participate to Win
+                        </div>
+                        <p className={styles.banner_content_description}>
+                            Two Finalists will each win N1,000,000 in cash, 
+                            a brand new Reno 3 Smartphone, media coverage on 
+                            top news and lifestyle platforms in Nigeria,  
+                            and an exclusive deal to Star the cover of Genevieve Magazine.
+                        </p>
+                    </div>
             </div>
 
             <div className={styles.banner_three_content}>
+                <div className={styles.banner_three_content_image}>
+                    <img src={require('../../images/reno_web_3.png')} /> 
+                </div>
                 <div className={styles.wrapper}>
                     <div className={styles.banner_content_header}>
-                        How to Enter
+                        Join the Contest
                     </div>
                     <div className={styles.banner_three_items}>
                         <div className={styles.banner_three_item}>

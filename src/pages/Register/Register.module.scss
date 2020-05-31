@@ -13,9 +13,9 @@
     padding-top: 2rem;
     padding-bottom: 0.75rem;
     background-image:
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.95)),
-        url('../../images/afro-bg.png');
-    background-size: cover;
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.95)),
+        url('../../images/model_1.jpg');
+    background-size: 100% 100%;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -53,25 +53,33 @@
     margin-top: auto;
     text-align: center;
     padding: 0;
-    
-    h4 {
-        font-family: 'Playfair Display', sans-serif;
-        font-size: 1.25rem !important;
-        line-height: 27px;
-        color: #7B7B7B;
+}
+
+.hero_message {
+    display: none;
+
+	@include screen('desktop') {
+        display: block;
+        width: 20%;
+        position: absolute;
+        bottom: 80px;
+        left: 15px;    
     }
-    
-    p {
-        font-family: 'Playfair Display', sans-serif;
-        font-size: 0.95rem;
-        line-height: 20px;
-        color: #7B7B7B;
-        font-weight: bold;
-    
-        @include screen('tablet') {
-            margin-top: 1rem;
-        }
-    }
+}
+.hero_message_quote {
+    font-family: 'Playfair Display', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 27px;
+    text-align: center;
+    color: #7B7B7B;
+
+    margin-bottom: 15px;
+}
+.hero_name {
+    font-size: 15px;
+    line-height: 20px;
 }
 
 .register_content {
@@ -97,6 +105,7 @@
     padding: 3rem 1.5rem;
     width: 95%;
     max-width: 550px;
+    margin-top: 200px;
 
 	@include screen('desktop') {
         background: transparent;
@@ -105,6 +114,7 @@
         width: 90%;
         max-width: 720px;
         padding: 2rem 0;
+        margin-top: 0;
     }
 }
 
@@ -153,7 +163,7 @@
     }
 }
 
-.register_content_form {
+.register_content_form {    
     @include flex(flex, null, wrap, space-between, center);
     padding: .75rem 0;
 }
@@ -230,11 +240,13 @@ a.external_link {
     bottom: 1;
     left: 0;    
 
-    @include screen('tablet') {
+    @include screen('desktop') {
         display: block;
     }
 }
 a.link_text {    
+    position: relative;
+    z-index: 2;
     text-decoration: none;    
     font-family: "Roboto";
     font-weight: normal;

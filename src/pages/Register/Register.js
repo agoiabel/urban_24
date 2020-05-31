@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from "framer-motion";
 import states from '../../shared/states';
 import { Link } from  'react-router-dom';
 import { FiShare2 } from 'react-icons/fi';
@@ -114,12 +115,13 @@ const Register = props => {
     let screen = (
         <React.Fragment>
             <div  className={styles.register_content_header} >
-                <h2>Submit Your Entry</h2>
-                <div onClick={() => redirect()}>
+                <motion.h2 initial={{ opacity: 0, x: '-70px'}} animate={{ opacity: 1, x: 0 }} transition={{duration: 1}}>Submit Your Entry</motion.h2>
+                <motion.div initial={{ opacity: 0, x: '70px'}} animate={{ opacity: 1, x: 0 }} transition={{duration: 1}} whileHover={{ scale: 1.5, rotate: 360 }} onClick={() => redirect()}>
                     <IoMdClose color="#000" size={30} />
-                </div>
+                </motion.div>
             </div>
-            <form className={styles.register_content_form} onSubmit={handleSubmit(onSubmit)}>
+
+            <motion.form initial={{ opacity: 0, y: '70px'}} animate={{ opacity: 1, y: 0 }} transition={{duration: 1, delay: 0.7}} className={styles.register_content_form} onSubmit={handleSubmit(onSubmit)}>
                 <div className={styles.register_formgroup}>
                     <Input type={'text'} name="firstname" control={control} placeholder="First Name" errors={errors.firstname} rules={{required: "firstname is a required", maxLength: {value: 30, message: "Max length is 30"}, minLength: {value: 3, message: "Min length is 3"}}} />
                 </div>
@@ -161,7 +163,7 @@ const Register = props => {
 
                 { button() }
 
-            </form>
+            </motion.form>
         </React.Fragment>
     );
 
@@ -184,12 +186,10 @@ const Register = props => {
                     <div className={styles.register_hero_logo}>
                         <img src={require('../../images/urban24-logo.png')} alt="Urban24 logo" />
                     </div>
-                    <div className={styles.register_hero_quote}>
-                        <h4>Everyday is a fashion show and the
-                            world is your runway.
-                        </h4>
-                        <p>- Coco Chanel</p>
-                    </div>
+                    <motion.div initial={{ opacity: 0, y: '50px'}} animate={{ opacity: 1, y: 0 }} transition={{duration: 1}} className={styles.hero_message}>
+                        <h3 className={styles.hero_message_quote}>Everyday is a fashion show and the world is your runway. </h3>
+                        <p className={`${styles.hero_message_quote} ${styles.hero_name}`}>- Coco Chanel</p>
+                    </motion.div>
                 </div>
 
                 <div className={styles.register_content}>
@@ -199,9 +199,7 @@ const Register = props => {
                         <img className={styles.auth_screen_bg1} src={require('../../images/register_footer.svg')} alt="Urban24 sign up" />
 
                         <div className="text-center">
-                            <Link to="/terms" className={styles.link_text}>
-                                Terms and Conditions
-                            </Link>
+                            <Link to="/terms" className={styles.link_text}>Terms and Conditions</Link>
                         </div>
                     </div>
                 </div>
