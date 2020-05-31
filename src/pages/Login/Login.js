@@ -51,9 +51,9 @@ const Login = props => {
     
     return (
         <AuthLayout title={'Login'}>
-            <div className={authStyles.auth_screen_logo}>
-                <img src={require('../../images/urban24-logo.png')} alt="Urban24 logo" />
-            </div>
+            <Link to={'/'} className={authStyles.auth_screen_logo}>
+                <img src={require('../../images/logo.svg')} alt="Urban24 logo" />
+            </Link>
             <div className={authStyles.auth_form}>
 
                 <motion.div className={authStyles.auth_form_box} initial={"hidden"} animate={"visible"} variants={variants}>
@@ -73,7 +73,6 @@ const Login = props => {
                         </Link>
                     </div>
                 </motion.div>
-
 
             </div>
         </AuthLayout>

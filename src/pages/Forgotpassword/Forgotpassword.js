@@ -7,7 +7,6 @@ import Input from '../../components/Input';
 import Button from '../../components/Button';
 import AuthLayout from '../../components/AuthLayout';
 import { useDispatch, useSelector } from "react-redux";
-import logo from '../../images/urban24-logo.png';
 import authStyles from '../../components/AuthLayout/AuthLayout.module.scss';
 import { ForgotpasswordCreate } from '../../shared/actions/Forgotpassword.action';
 
@@ -67,9 +66,9 @@ const Forgotpassword = props => {
 
     return (
         <AuthLayout title={'Forgotpassword'}>
-            <div className={authStyles.auth_screen_logo}>
-                <img src={logo} alt="Urban24 logo" />
-            </div>
+            <Link to={'/'} className={authStyles.auth_screen_logo}>
+                <img src={require('../../images/logo.svg')} alt="Urban24 logo" />
+            </Link>
             <div className={authStyles.auth_form}>
                 <motion.div className={authStyles.auth_form_box} initial={"hidden"} animate={"visible"} variants={variants}>
                     { screen }

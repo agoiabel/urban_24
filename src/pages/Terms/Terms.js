@@ -40,14 +40,14 @@ const Terms = props => {
                     <div className={styles.item}>
                         <div className={styles.item_header}>Submission Guidelines</div>
                         <ul>
-                            <li>The deadline for portfolio entry is XXX of JUNE, 2020</li>
+                            <li>The deadline for portfolio entry is 8th of June, 2020</li>
                         </ul>
                     </div>
 
                     <div className={styles.item}>
                         <div className={styles.item_header}>Selection Guidelines</div>
                         <ul>
-                            <li>The selected entries would be sent an email on or before the xxx of xxxx, 2020.</li>
+                            <li>The selected entries would be sent an email on or before the June 15, 2020.</li>
                         </ul>
                     </div>
 

@@ -93,10 +93,10 @@ const Register = props => {
                     </div>
                     <div className={styles.share_sub}>You need to share before you can submit</div>
                 </div>
-                <a className={styles.share_fb} onClick={setLinkClicked} href="https://www.facebook.com/sharer/sharer.php?u=reno3urban24.ng/&description=please visit this site" target="_blank">
+                <a className={styles.share_fb} onClick={setLinkClicked} href="https://www.facebook.com/sharer/sharer.php?u=reno3urban24.ng/&description=I am participating in the OPPO Reno3 Urban24 Modelling Contest to win N2 million in cash, a brand new Reno3 smartphone and a front cover modelling deal on the biggest magazine in Nigeria. Visit https://www.reno3urban24.ng/ to join the contest too.  #OPPOReno3Series #Reno3Urban24" target="_blank">
                     <FacebookSvg color={color} />
                 </a>
-                <a className={styles.share_tw} onClick={setLinkClicked} href="https://twitter.com/intent/tweet?url=reno3urban24.ng/&text=please visit this site>" target="_blank">
+                <a className={styles.share_tw} onClick={setLinkClicked} href="https://twitter.com/intent/tweet?url=reno3urban24.ng/&text=I am participating in the OPPO Reno3 Urban24 Modelling Contest to win N2 million in cash, a brand new Reno3 smartphone and a front cover modelling deal on the biggest magazine in Nigeria. Visit https://www.reno3urban24.ng/ to join the contest too.  #OPPOReno3Series #Reno3Urban24>" target="_blank">
                     <TwitterSvg color={color} />
                 </a>
             </div>

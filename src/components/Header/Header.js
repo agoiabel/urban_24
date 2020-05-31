@@ -7,7 +7,7 @@ const Header = props => {
         <div className={styles.wrapper}>
             <div className={styles.logo_navs}>
                 <Link className={styles.logo} to={'/'}>
-                    <img src={require('../../images/urban24-logo.png')} alt="Urban24 logo" />
+                    <img src={require('../../images/logo.svg')} alt="Urban24 logo" />
                 </Link>
 
                 <div className={styles.navs}>
