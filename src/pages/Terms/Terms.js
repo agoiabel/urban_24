@@ -31,9 +31,9 @@ const Terms = props => {
                     <div className={styles.item}>
                         <div className={styles.item_header}>Eligibility Guidelines</div>
                         <ul>
-                            <li> - You must be a resident in Nigeria.</li>
+                            <li> - You must be resident in Nigeria.</li>
                             <li> - You must submit 5 pictures.</li>
-                            <li> - You must be over 18 or have the written permission of your legal guardian.</li>
+                            <li> - You must be over 18 years old to participate.</li>
                         </ul>
                     </div>
 
@@ -47,7 +47,7 @@ const Terms = props => {
                     <div className={styles.item}>
                         <div className={styles.item_header}>Selection Guidelines</div>
                         <ul>
-                            <li>The selected entries would be sent an email on or before the June 15, 2020.</li>
+                            <li>The selected finalists would be contacted via call/email on or before the 15th of June, 2020.</li>
                         </ul>
                     </div>
 
