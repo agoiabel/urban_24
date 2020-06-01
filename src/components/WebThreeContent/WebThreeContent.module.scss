@@ -31,6 +31,10 @@
     color: #FFFFFF;    
 
     margin-left: -130px;
+
+    @include screen("(min-width: 1200px) and (max-width: 1400px)") {
+        font-size: 100px;
+    }
 }
 .description {
     font-family: "Roboto";
@@ -89,6 +93,9 @@
     @include screen("(min-width: 1200px) and (max-width: 1400px)") {
         bottom: 3.5vw;
     }
+    @include screen("(max-height: 800px)") {
+        bottom: 2vw;
+    }
 }
 .web_button {
     margin: 50px auto;
@@ -103,6 +110,9 @@
     @include screen("(min-width: 1200px) and (max-width: 1400px)") {
         bottom: -2vw;
         right: 20vw;
+    }
+    @include screen("(max-height: 800px)") {
+        bottom: -2vw;
     }
 }
 
