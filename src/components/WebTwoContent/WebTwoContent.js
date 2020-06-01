@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { IoMdArrowBack } from 'react-icons/io';
 import styles from './WebTwoContent.module.scss';
 
+// Page Two Handled
 const WebTwoContent = ({next}) => {
 
     return (
