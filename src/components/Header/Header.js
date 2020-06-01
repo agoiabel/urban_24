@@ -14,11 +14,11 @@ const Header = props => {
                     <div>
                         <Link to={'/terms'} className={`${styles.nav} ${styles.link}`}>Terms and Conditions</Link>
                     </div>
-                    <div className={`${styles.nav} ${styles.link}`}>
+                    {/* <div className={`${styles.nav} ${styles.link}`}>
                         <Link to={'/terms'} className={`${styles.nav} ${styles.link}`}>About</Link>
-                    </div>
+                    </div> */}
                     <div className={`${styles.nav} ${styles.link}`}>
-                        <a href={"https://www.oppo.com/en/"} target="_blank" className={`${styles.nav} ${styles.link}`}>OPPO.com</a>
+                        <a href={"http://www.oppo.com/ng"} target="_blank" className={`${styles.nav} ${styles.link}`}>OPPO.com</a>
                     </div>
                 </div>
             </div>
