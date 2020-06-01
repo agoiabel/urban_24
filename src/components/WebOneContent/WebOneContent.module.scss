@@ -69,18 +69,30 @@
     @include screen("(min-width: 1200px) and (max-width: 1300px)") {}
 }
 .description {
-    width: 400px;
+
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 158.7%;
+    color: #FFFFFF;
+
+    width: 450px;
     position: relative;
     z-index: 4;
 
-    margin-top: 15%;
+    margin-top: 10%;
 
     .web_button {
         width: 80%;
         margin: 50px auto;
+
+        @include screen("(max-height: 800px)") {
+            margin-top: 15px;
+        }
     }
 
-    @include screen("(max-height: 700px)") {
-        margin-top: 30px;
+    @include screen("(max-height: 800px)") {
+        margin-top: -10px;
     }
 }

@@ -1,5 +1,7 @@
 @import '../../shared//styles/mixins';
 
+
+
 .container {
     color: #FFFFFF;
     padding: 20px 0;
@@ -15,132 +17,74 @@
     }
 }
 
-.banner_web_image {
-    img {
-        height: 100%;
-        margin-top: 50px;
-        object-fit: contain;
 
-        position: relative;
-        z-index: 2;
 
-        @include screen("(max-height: 600px)") {
-            width: 35%;
-            margin-top: 0;
-        }
-    }
-
+.content {
+    display: flex;
+    flex-direction: row;
 }
-
-.items {
-    top: 40%;
-    left: 20%;
-    position: absolute;
+.description {
+    margin-top: 7vw;
+    margin-left: -120px;
 }
-.item {
+.title,
+.sub_title {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 200;
+    font-size: 133px;
+    line-height: 124px;
+    color: #FFFFFF;    
+}
+.message {
     font-family: "Roboto";
     font-style: normal;
     font-weight: 300;
     font-size: 20px;
-    line-height: 158.7%;    
-    color: #FFFFFF;
-}
-.item_number {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #FFF;
-    flex-shrink: 0;
-    margin-right: 20px;
-}
-.item_description {
-    font-family: "Roboto";
-    line-height: 158.69%;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 14px;
+    line-height: 158.7%;
     color: #FFFFFF;
 
-    max-width: 200px;
-}
-.banner_web_header {
-    position: absolute;
-    top: 20%;
-    left: 32.5%;
+    width: 600px;
 
-    @include screen("(min-width: 1200px) and (max-width: 1400px)") {
-        left: 45%;
-    }
-    @include screen("(min-width: 1400px)") {
-        left: 40%;
-    }
-    // @include screen("(max-height: 600px)") {
-    //     top: 190px;
-    
-    // }
-
-    .banner_title {
-        font-family: "Roboto";
-        font-style: normal;
-        font-size: 100px;
-        font-weight: 200;
-        line-height: 156px;
-    
-        @include screen("(min-width: 1400px)") {
-            font-size: 133px;
-        }
-    }
-    .sub_title {
-        display: block;
-        margin-top: -35px;
-    }    
+    margin: 50px 0;
 }
 
 
-.banner_web_description {
-    position: absolute;
-    left: 35%;
-    top: 52.5%;
-    width: 550px;
 
-    @include screen("(min-width: 1200px) and (max-width: 1400px)") {
-        left: 45%;
-    }
-    @include screen("(min-width: 1400px)") {
-        left: 40%;
-    }
-    @include screen("(min-width: 1500px)") {
-        left: 41%;
-    }
 
-}
 .back {
     position: absolute;
-    bottom: 78px;
-    left: 100px;
-
+    bottom: 8vw;
+    left: 10vw;
     z-index: 3;
-}
 
+    .circle {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #FFF;
+        flex-shrink: 0;
+        margin-right: 20px;
+    }
+}
 .web_button {
     margin: 50px auto;
     width: 15%;
 
     position: absolute;
-    left: 40%;
-    bottom: 2%;
+    bottom: 4vw;
+    right: 40vw;
+
     z-index: 4;
     
     @include screen("(min-width: 1200px) and (max-width: 1400px)") {
-        left: 45%;
+        right: 30vw;
     }
 }
-
-
 .auth_screen_bg1 {
     background-repeat: no-repeat;
     background-size: cover;
