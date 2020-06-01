@@ -191,7 +191,7 @@ const Register = props => {
             <div className={styles.register}>
                 <div className={styles.register_hero}>
                     <div className={styles.register_hero_logo}>
-                        <img src={require('../../images/urban24-logo.png')} alt="Urban24 logo" />
+                        <img src={require('../../images/logo.svg')} alt="Urban24 logo" />
                     </div>
                     <motion.div initial={{ opacity: 0, y: '50px'}} animate={{ opacity: 1, y: 0 }} transition={{duration: 1}} className={styles.hero_message}>
                         <h3 className={styles.hero_message_quote}>Everyday is a fashion show and the world is your runway. </h3>
