@@ -16,12 +16,12 @@ const WebOneContent = ({next}) => {
                 </motion.div>
 
                 <div className={styles.banner_web_one_content}>
-                    <div className={styles.banner_web_header}>
-                        <motion.div initial={{ opacity: 0, y: '-20px'}} animate={{ opacity: 1, y: 0 }} transition={{duration: 3, delay: 0.1}} className={styles.banner_title}>Star in</motion.div>
-                        <motion.div initial={{ opacity: 0, y: '30px'}} animate={{ opacity: 1, y: 0 }} transition={{duration: 3, delay: 0.7}} className={`${styles.banner_title} ${styles.banner_sub_title}`}>Every Light</motion.div>
+                    <div className={styles.header}>
+                        <motion.div initial={{ opacity: 0, y: '-20px'}} animate={{ opacity: 1, y: 0 }} transition={{duration: 3, delay: 0.1}} className={styles.title}>Star in</motion.div>
+                        <motion.div initial={{ opacity: 0, y: '30px'}} animate={{ opacity: 1, y: 0 }} transition={{duration: 3, delay: 0.7}} className={`${styles.title} ${styles.sub_title}`}>Every Light</motion.div>
                     </div>
 
-                    <motion.p initial={{ x: '100%', opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{duration: 1, delay: 1}} className={`${styles.banner_content_description}`}>
+                    <motion.p initial={{ x: '100%', opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{duration: 1, delay: 1}} className={`${styles.description}`}>
                         Urban24 is a search for young and trendy Nigerian models 
                         that aspire to become celebrities and superstars through Fashion, 
                         Art and Photography. Urban 24 is geared to discover the stars of 

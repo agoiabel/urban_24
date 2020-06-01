@@ -12,88 +12,75 @@
         width:100%;
         top:0;
         left:0;
+        margin: 0 auto;
     }
 }
-.banner_content_description {
-    position: absolute;
-    z-index: 1000;
 
-    @include screen("desktop") {
-        width: 20%;
-        right: 5%;
-        top: 70%;
-    }
-    @include screen("(min-width: 1300px)") {
-        right: 20%;
-        width: 20%;
-        top: 70%;
-    }
-    @include screen("(min-width: 1400px)") {
-        right: 29%;
-        width: 20%;
-        top: 70%;
-    }
-    @include screen("(max-height: 600px)") {
-        top: 60%;
-        right: 20%;
-        width: 27%;
-    }
+.banner_web_one {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.banner_web_one_content {
+    width: 70%;
+    flex-shrink: 0;
 }
 .banner_web_image {
+    width: 50%;
+    z-index: 2;
+    flex-shrink: 0;
+    @include screen("(min-width: 1200px) and (max-width: 1300px)") {}
+
     img {
-        height: 100%;
-        margin-top: 50px;
-        object-fit: contain;
+        width: 100%;
+        height: 100vh;
+        object-fit: fill;
+        background-size: 100% 100%;
 
-        position: relative;
-        z-index: 2;
-
-        @include screen("(max-height: 600px)") {
-            max-height: 100vh;
-        }
+        @include screen("(min-width: 1200px) and (max-width: 1300px)") {}
     }
 }
-.banner_web_header {
+.auth_screen_bg1 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+
     position: absolute;
-    top: 20%;
-    left: 25%;
-
-    @include screen("(max-height: 700px)") {
-        top: 15%;
-        left: 32%;
-    }
+    bottom: 0;
+    left: 0;    
+    z-index: 1;
 }
-.banner_title {
+.header {
+    margin-left: -28vw;
+}
+.title {
     font-family: "Roboto";
     font-style: normal;
     font-weight: 200;
-    font-size: 100px;
-    line-height: 156px;
+    font-size: 150px;
+    line-height: 176px;
+    color: #FFFFFF;
 
-    @include screen("(min-width: 1200px)") {
-        font-size: 120px;
-    }
-    @include screen("(min-width: 1300px)") {
-        font-size: 133px;
-    }
-    @include screen("(max-height: 600px)") {
-        font-size: 100px;
-    }
+    @include screen("(min-width: 1200px) and (max-width: 1300px)") {}
 }
-.banner_sub_title {
-    position: relative;
-    left: 250px;
+.sub_title {
+    margin-left: 10vw;
 
-    @include screen("(max-height: 600px)") {
-        top: -50px;
-        left: 150px;
-    }
+    @include screen("(min-width: 1200px) and (max-width: 1300px)") {}
 }
-
-.web_button {
-    width: 80%;
-    margin: 50px auto;
-
+.description {
+    width: 400px;
     position: relative;
-    left: 1.5%;
+    z-index: 4;
+
+    margin-top: 15%;
+
+    .web_button {
+        width: 80%;
+        margin: 50px auto;
+    }
+
+    @include screen("(max-height: 700px)") {
+        margin-top: 30px;
+    }
 }
