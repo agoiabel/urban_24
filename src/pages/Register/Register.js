@@ -147,7 +147,9 @@ const Register = props => {
                 </div>
 
                 <div className={styles.register_formgroup}>
-                    <Input type={"number"} name="date_of_birth" control={control} placeholder="Age" errors={errors.date_of_birth} rules={{required: "age is a required"}} />
+                    <Input type={"text"} name="date_of_birth" control={control} placeholder="Age" errors={errors.date_of_birth} rules={{required: "age is a required", validate: {
+                        positiveNumber: value => parseFloat(value) > 18,
+                    }}} />
                 </div>
 
                 <div className={styles.register_formgroup}>
