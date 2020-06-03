@@ -72,12 +72,26 @@ const Table = props => {
         });
 
         if (filteredData.length) {
-            return filteredData.map(row => {
+            return filteredData.map((row, index) => {
 
-                let icon = <MdCheckBoxOutlineBlank  />
+                let icon = (
+                    <div className={styles.counter_container}>
+                        <MdCheckBoxOutlineBlank  />
+                        <div className={styles.counter}>
+                            {index + 1}
+                        </div>
+                    </div>
+                )
 
                 if (row.is_active) {
-                    icon = <MdCheckBox />
+                    icon = (
+                        <div className={styles.counter_container}>
+                            <MdCheckBox />
+                            <div className={styles.counter}>
+                                {index + 1}
+                            </div>
+                        </div>
+                    )
                 }
 
                 return (
