@@ -161,7 +161,7 @@ const Register = props => {
                 </div>
 
                 <div className={styles.register_formgroup} style={{ marginTop: '1rem' }}>
-                    <Input type={'text'} name="address" control={control} placeholder="Address" errors={errors.address} rules={{required: "address is a required", maxLength: {value: 30, message: "Max length is 30"}}} />
+                    <Input type={'text'} name="address" control={control} placeholder="Address" errors={errors.address} rules={{required: "address is a required", maxLength: {value: 100, message: "Max length is 100"}}} />
                 </div>
 
                 <div className={styles.register_formgroup}>
