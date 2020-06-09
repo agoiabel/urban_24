@@ -47,6 +47,11 @@ const Landing = () => {
     ]);
 
     const next = pageId => {
+
+        if (pageId === 4) {
+            return alert('Registration Closed');
+        }
+
         let newPages = [...pages].map(page => {
             page['is_active'] = false;
 

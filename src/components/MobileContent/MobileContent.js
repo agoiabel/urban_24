@@ -69,7 +69,7 @@ const BannerTwo = props => {
     )
 }
 
-const BannerThree = ({gotoNext}) => {
+const BannerThree = ({gotoNext}) => {    
     const controls = useAnimation();
     const [ref, inView] = useInView();
 
@@ -159,6 +159,7 @@ const Footer = props => {
 const MobileContent = props => {
     
     const gotoNext = () => {
+        return alert('Registration closed');
         props.history.push('/register');
     }
 
