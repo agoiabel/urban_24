@@ -26,7 +26,7 @@ const App = props => {
                         <Route path="/" exact component={Landing} />
                         <Route path="/login" exact component={Login} />
                         <Route path="/terms" exact component={Terms} />
-                        <Route path="/register" exact component={Register} />
+                        <Route path="/secure_register" exact component={Register} />
                         <Route path="/forgotpassword" exact component={Forgotpassword} />
                         <Route path="/unrestricted" exact component={RestrictedAccess} />
 
